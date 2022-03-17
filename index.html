@@ -10,10 +10,10 @@
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
     
-    .navbar-color{
+    .container-color{
         background-color:#a78873;
-        height: 100px;
     }
     .container-1{
         background-image: url(https://i.imgur.com/lQfNs5P.jpg);
@@ -22,12 +22,20 @@
     }
     .container-fluid { 
         padding: 0;
+        margin-right: 0;
+        margin-left: 0;
     }
     .ml-left{
-        margin-left: 30px;
+        margin-left: 10px;
     }
     .ml-left-less{
-        margin-left: 10px;
+        margin-left: 5px;
+    }
+    .mr-right{
+        margin-right: 15px;
+    }
+    .ml-top-less{
+        margin-top: 10px;
     }
     .text-cent{
         text-align: center;
@@ -37,6 +45,10 @@
     }
     .navbar-icons-end{
         align-items:end;
+        padding: 0;
+    }
+    .navbar-bottom-border{
+        border-bottom:5px solid #d3c2b0;
     }
     .font-pacifico{
         font-family: Pacifico;
@@ -44,59 +56,38 @@
     }
     .font-navbar-items{
         font-family: Impact;
-        font-size: 15px;
+        font-size: 10px;
     }
+    .container-border{
+        border-bottom:5px solid #d3c2b0;
+        border-top:5px solid #d3c2b0;
+    }
+    
 
 </style>
 <body>
+    
 
-    <nav class="navbar navbar-expand-lg navbar-light navbar-color font-navbar-items">
-        <a class="navbar-brand mb-0 h1 ml-left" href="#">
-            <img src="C:\Users\riali\OneDrive\Desktop\Capstone\Depotea files\depotea-orig.png" style="width: 100px;"></img>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse navbar-icons-end" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!--
+    <nav class="navbar navbar-expand-md navbar-dark py-0 navbar-bottom-border" style="background-color: #7c6656;">
+        <div class="container-fluid ml-left">
+          <a class="navbar-brand" href="#" style="font-family: Nunito; font-size: 30px;"><img src="C:\Users\riali\OneDrive\Desktop\Capstone\Depotea files\depotea-orig.png" style="height: 100px"></img></a>
+          <button class="navbar-toggler mr-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0 font-navbar-items">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">MILK TEA</a>
+                <a class="nav-link active" aria-current="page" href="#">PRODUCTS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active ml-left-less" href="#">FRUIT TEA</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active ml-left-less" href="#">SNACK</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active ml-left-less" href="#">MEAL</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active ml-left-less" href="#">ABOUT</a>
-              </li>
-            -->
-              
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle ml-left-less" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  PRODUCTS
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">MILK TEA</a></li>
-                  <li><a class="dropdown-item" href="#">FRUIT TEA</a></li>
-                  <li><a class="dropdown-item" href="#">SNACK</a></li>
-                  <li><a class="dropdown-item" href="#">MEAL</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link ml-left-less" href="#">ORDER</a>
+                <a class="nav-link active" aria-current="page" href="#">ORDER</a>
               </li>
             </ul>
-          
+          </div>
         </div>
-    </nav>
+      </nav>
 
-    <div class="container container-1 container-fluid" style="height:500px">
+    <div class="container container-1 container-fluid " style="height:500px">
         <!--div class="row justify-content-center align-items-center custom-row ">
             <div class="col-sm-4 text-cent">CONTENT HERE</div>
         </div>
@@ -106,19 +97,24 @@
         </div>
     </div>
 
-    <div class="container" style="height:700px">
-        <div class="row">
-            <div class="col">Content here</div>
-            <div class="col">Content here</div>
+    <div class="container container-color container-fluid container-border" style="height:700px">
+        <div class="row align-items-center" style="height: 350px;">
+            <div class="col-sm-5 gx-4">Content here</div>
+            <div class="col-sm-5 gx-4">Content here</div>
         </div>
 
-        <div class="row">
-            <div class="col">Content here</div>
-            <div class="col">Content here</div>
-            <div class="col">Content here</div>
+        <div class="row justify-content-center align-items-center" style="height: 350px;">
+            <div class="col-sm-5">
+                <div class="p-3 border bg-light">Custom column padding</div>
+            </div>
+            <div class="col-sm-5">
+                <div class="p-3 border bg-light">Custom column padding</div>
+            </div>
+            
         </div>
 
     </div>
+        
 
 
 
