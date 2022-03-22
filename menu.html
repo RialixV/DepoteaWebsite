@@ -4,170 +4,236 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Depotea Website</title>
+    <title>Depotea</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href="style.css" rel="stylesheet" media="screen">
 </head>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-    .container-color{
-        background-color:#a78873;
-    }
-    .container-1{
-        background-image: url(https://i.imgur.com/lQfNs5P.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    .container-fluid { 
-        padding: 0;
-        margin-right: 0;
-        margin-left: 0;
-    }
-    .ml-left{
-        margin-left: 10px;
-    }
-    .ml-left-less{
-        margin-left: 5px;
-    }
-    .mr-right{
-        margin-right: 15px;
-    }
-    .ml-top-less{
-        margin-top: 10px;
-    }
-    .text-cent{
-        text-align: center;
-    }
-    .custom-row{
-        height: 400px;
-    }
-    .navbar-icons-end{
-        align-items:end;
-        padding: 0;
-    }
-    .navbar-bottom-border{
-        border-bottom:5px solid #d3c2b0;
-    }
-    .font-pacifico{
-        font-family: Pacifico;
-        font-size: 50px;
-    }
-    .font-navbar-items{
-        font-family: Montserrat;
-        font-size: 20px;
-    }
-    .container-border{
-        border-bottom:5px solid #d3c2b0;
-        border-top:5px solid #d3c2b0;
-    }
-    .row-margin-right{
-        margin-right: 0;
-    }
-    .footer-button{
-        border: none;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        border-radius: 50%;
-    }
-    .carousel-item {
-        height: 450px;
-    }
-    .carousel-item-img {
-        position: absolute;
-        object-fit:cover;
-        top: 0;
-        left: 0;
-        min-height: 500px;
-        height: auto;
-    }   
-    .gumana-ka:hover {
-        color: rgb(204, 0, 255);
-    }
-
+	/* TEMPORARY */
+	
+	.slideshow-container {
+		max-width: 100px;
+		position: relative;
+		margin: auto;
+	}
+	.mySlides {
+		display: none;
+	}
+	.col{
+		text-align: center;
+		border: 2px;
+	}
+	.category{
+		font-size: 15px;
+		border: 2px;
+		background-color: aliceblue;
+		padding: 10px;
+	}
+	.item-category{
+		font-size: 50px;
+	}
+	.p-text{
+		font-size: 20px;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+	}
+	.item-text{
+		font-size: 25px;
+		text-align: center;
+	}
 </style>
-<body>
+<body class="top-body">
     
+		<!-- NAVIGATION BAR -->
+	<section class="top-header">
+		<nav class="navbar navbar-expand-md navbar-dark py-0 navbar-bottom-border">
+			<div class="container-fluid ml-left" style="margin-left: 125px;">
+				<div style="margin-right: 150px">
+					<div class="slideshow-container">
+						<div class="mySlides">
+							<img src="assets/img/logo/icon-default.png" style="min-height: 100%; max-height: 75px;"></img>
+						</div>
+					</div>
+					<div class="slideshow-container">
+						<div class="mySlides">						
+							<img src="assets/img/logo/icon-summer.png" style="min-height: 100%; max-height: 75px;"></img>
+						</div>
+					</div>
+					<div class="slideshow-container">
+						<div class="mySlides">						
+							<img src="assets/img/logo/title-white.png" style="min-height: 100%; max-height: 75px;"></img>
+						</div>
+					</div>
+					<div class="slideshow-container">
+						<div class="mySlides">
+							<img src="assets/img/logo/title-black.png" style="min-height: 100%; max-height: 75px;"></img>
+						</div>
+					</div>
+					<div class="slideshow-container">
+						<div class="mySlides">						
+							<img src="assets/img/logo/title-summer.png" style="min-height: 100%; max-height: 75px;"></img>
+						</div>
+					</div>
+					<div class="slideshow-container">
+						<div class="mySlides">						
+							<img src="assets/img/logo/icontitle-side-white.png" style="min-height: 100%; max-height: 75px;"></img>
+						</div>
+					</div>
+					<div class="slideshow-container">
+						<div class="mySlides">						
+							<img src="assets/img/logo/icontitle-side-black.png" style="min-height: 100%; max-height: 75px;"></img>
+						</div>
+					</div>
+					<div class="slideshow-container">
+						<div class="mySlides">						
+							<img src="assets/img/logo/icontitle-side-summer.png" style="min-height: 100%; max-height: 75px;"></img>
+						</div>
+					</div>
+					<div class="slideshow-container">
+						<div class="mySlides">						
+							<img src="assets/img/logo/icontitle-top-white.png" style="min-height: 100%; max-height: 75px;"></img>
+						</div>
+					</div>
+					<div class="slideshow-container">
+						<div class="mySlides">						
+							<img src="assets/img/logo/icontitle-top-black.png" style="min-height: 100%; max-height: 75px;"></img>
+						</div>
+					</div>
+					<div class="slideshow-container">
+						<div class="mySlides">						
+							<img src="assets/img/logo/icontitle-top-summer.png" style="min-height: 100%; max-height: 75px;"></img>
+						</div>
+					</div>
+				</div>
+				<button class="navbar-toggler mr-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav me-auto mb-2 mb-md-0 font-navbar-items">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="menu.html">MENU</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">CHECKOUT</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</section>
+	
+	
+		<!-- MENU -->
+    <div class="container content container-color container-fluid">
 
-    <nav class="navbar navbar-expand-md navbar-light py-0 navbar-bottom-border" style="background-image: linear-gradient(rgba(100, 83, 76, 0.7), rgba(0,0,0,0))">
-        <div class="container-fluid ml-left">
-          <a class="navbar-brand" href="index.html" style="font-family: Nunito; font-size: 30px;"><img src="C:\Users\riali\OneDrive\Desktop\Capstone\Depotea files\depotea-orig.png" style="height: 100px"></img></a>
-          <button class="navbar-toggler mr-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0 font-navbar-items">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">PRODUCTS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">ORDER</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
+		<br>
 
-    <div class="container container-color container-fluid container-border" style="height:700px; min-width: 100%;">
-        <div class="row justify-content-center row-margin-right align-items-center" style="height: 350px;">
-            <div class="col-sm-5 gx-4">
-                <div class="p-3 border bg-light">Custom column padding</div>
-            </div>
-            <div class="col-sm-5 gx-4">
-                <div class="p-3 border bg-light">Custom column padding</div>
-            </div>
-        </div>
+		<div class="row justify-content-center">
+			<div class="col col-2 col-md-offset-2 category"><a href="#category-Milktea">Milk Tea</a></div>
+			<div class="col col-2 col-md-offset-2 category">Fruit Tea</div>
+			<div class="col col-2 col-md-offset-2 category">Snacks</div>
+			<div class="col col-2 col-md-offset-2 category">Meals</div>
+		</div>
+		
+		<br>
+		
+		<!--Milk Tea Category-->
 
-        <div class="row justify-content-center row-margin-right align-items-center" style="height: 350px;">
-            <div class="col-sm-5">
-                <div class="p-3 border bg-light">Custom column padding</div>
-            </div>
-            <div class="col-sm-5">
-                <div class="p-3 border bg-light">Custom column padding</div>
-            </div>
-            
-        </div>
+		<div class="row">
+			<div class="col item-category" id="category-Milktea">MILK TEA</div>
+		</div>
+		<br>
 
+		<div class="row justify-content-around" style="margin: 10px;">
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+			<div class="col col-sm-12 col-lg-3 col-md-4 item-text"><img src="https://i.imgur.com/5iPwcOe.png" style="width: 175px; text-align: center;" class="center"></img><p class="p-text">Sample Product</p><p class="p-text">70Php</p></div>
+		</div>
+
+		<!--Milk Tea Category-->
+        
     </div>
-            <!-- Footer -->
-    <footer class="bg-dark text-white">
-        <!-- Grid container -->
-        <div class="container p-4">
-  
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-primary footer-button" style="background-color: #3b5998; background-image: url(http://i.stack.imgur.com/e2S63.png); background-size: 39px 43px;background-position: -4px -2px; background-repeat: no-repeat;" href="https://www.facebook.com/depotea2019" role="button"><i class="fab fa-facebook-f"></a>
-  
-                <!-- Instagram -->
-                <a class="btn btn-primary footer-button" style="background-color: #ac2bac; background-image: url(https://imgur.com/M6yBwxS.png); background-size: 40px 40px;background-position: 0px 0px; background-repeat: no-repeat;"" href="https://www.instagram.com/depotea_camalig" role="button"><i class="fab fa-instagram"></i></a>
-            </section>
-            <!-- Section: Social media -->
-  
-            <!-- Section: Text -->
-            <section class="mb-4">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                    distinctio earum repellat quaerat voluptatibus placeat nam,
-                    commodi optio pariatur est quia magnam eum harum corrupti dicta,
-                    aliquam sequi voluptate quas.
-                </p>
-            </section>
-            <!-- Section: Text -->
-  
-        </div>
-        <!-- Grid container -->
-  
-    </footer>
-    <!-- Footer -->
+	
+    <div class="container content container-color">
+        
+    </div>
+	
+		<!-- FOOTER -->
+	<div class="parallax-footer">
+		<footer class="text-white">
+			<div style="padding: 50px;">
+				<div class="container p-4 bg-dark">
+					<table id="footer-table">
+						<tr>
+							<td id="footer-copyright" rowspan="2">
+								<p class="footer-p copyright-p">
+									<span style="font-family: Impact; color: gray;">©2022</span><span style="font-family: Impact;">JoeMamaIndustries</span>
+								</p>
+							</td>
+							<td id="footer-logo" colspan="3">
+								<a id="footer-icon" href="#"><img src="assets/img/logo/icon-default.png" style="width: 6vw; border-radius: 50%;"></img></a>
+							</td>
+							<td id="footer-contact" rowspan="2">
+								<p class="footer-p contact-p"><span >CONTACT</span></p>
+								<p class="footer-p contact-p"><span >(0916) 458-3024</span></p>
+								<p class="footer-p contact-p"><span >depotea2019@gmail.com</span></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a id="footer-facebook" href="https://www.facebook.com/depotea2019" target="_blank" rel="noopener noreferrer"><img src="assets/img/icon/fb-icon.png" style="width: 3vw; border-radius: 50%;"></img></a>
+							</td>
+							<td>
+								<a id="footer-instagram" href="https://www.instagram.com/depotea_camalig" target="_blank" rel="noopener noreferrer"><img src="assets/img/icon/ig-icon.png" style="width: 3vw; border-radius: 50%;"></img></a>
+							</td>
+							<td>
+								<a id="footer-whatsapp" href="https://api.whatsapp.com/send?phone=639673522440" target="_blank" rel="noopener noreferrer"><img src="assets/img/icon/wa-icon.png" style="width: 3vw; border-radius: 50%;"></img></a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script>
+		var slideIndex = 0;
+		showSlides();
 
+		function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("slideshow-container");
+			
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			}
+			
+			slideIndex++;
+			
+			if (slideIndex > slides.length) {slideIndex = 1}  
+			
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			
+			slides[slideIndex-1].style.display = "block";  
+			dots[slideIndex-1].className += " active";
+			setTimeout(showSlides, 2000);
+		}
+	</script>
+	<noscript>Sorry, your browser does not support JavaScript!</noscript>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
