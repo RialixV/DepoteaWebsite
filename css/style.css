@@ -5,6 +5,8 @@
 
 body, html{
     height: 100%;
+	width: 100%;
+	animation: slideDown 1.5s;
 }
 html::-webkit-scrollbar {
     display: none;
@@ -22,50 +24,69 @@ body{
     background-size: cover;
 }
 
-/* PARALLAX */
-
-.parallax1{
-    background-image: url(assets/img/harambe.webp);
-    height: 100%;
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: norepeat;
-    background-size: cover;
+@keyframes slideDown {
+	0% {margin-top: -100%; opacity: 0;}
+	100% {margin-top: 0; opacity: 1;}
+}
+@keyframes fadeIn {
+  0%	{opacity: 0;}
+  100%	{opacity: 1;}
 }
 
 /* TOP SECTION */
 
-.carousel-canvas{
-	position:absolute;
-	top: 10%;
-	left: 10%;
-	margin: 50px;
-	max-width: 500px;
-}
-.img-slider{
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-}
-
-body .top-page{
+body .top-section{
 	position: relative;
 	height: 100vh;
 }
-section .navbar-header{
+section .header-wrapper{
 	position: absolute;
 	top: 5%;
 	left: 5%;
 	right: 5%;
 }
-nav .navbar-brand{
-	height: 100px;
+nav .logo{
 	width: 100px;
+	margin: 0;
 	transition: 750ms linear;
 }
-nav .navbar-brand:hover{
+nav .logo:hover{
 	transform: scale(1.2);
 	transition: 250ms linear;
+}
+a .navbar-icon{
+	height: 100%;
+	width: 100%;
+}
+
+.slideshow{
+	position: absolute;
+	top: 20%;
+	left: 15%;
+	width: 40%;
+	height: 50%;
+	overflow: hidden;
+}
+.img-container{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	animation: slideUp 15s infinite;
+}
+.slide-img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	float: left;
+}
+
+@keyframes slideUp {
+	20% {top: 0;}
+	40% {top: -100%;}
+	50% {top: -100%;}
+	70% {top: -200%;}
+	80% {top: -200%;}
+	100%{top: 0;}
 }
 
 /* CONTENT */
@@ -86,34 +107,18 @@ nav .navbar-brand:hover{
     margin-left: 0;
 }
 
+/* PARALLAX */
+
+body .parallax1{
+    height: 100%;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: norepeat;
+    background-size: cover;
+}
+
 /* FOOTER */
 
 footer{
 	padding: 50px;
-}
-#footer-table{
-    width: 100%;
-    text-align: center;
-}
-#footer-logo{
-    width: 20%;
-}
-.footer-icon{
-	transition: 750ms linear;
-}
-.footer-icon:hover{
-	transform: scale(1.2);
-	transition: 250ms linear;
-}
-#footer-copyright, #footer-contact{
-    width: auto;
-}
-.footer-p{
-    margin: 0;
-}
-.copyright-p{
-    font-size: 2vh;
-}
-.contact-p{
-    font-size: 2vh;
 }
