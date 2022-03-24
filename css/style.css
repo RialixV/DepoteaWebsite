@@ -6,7 +6,7 @@
 body, html{
     height: 100%;
 	width: 100%;
-	animation: slideDown 1.5s;
+	animation: fadeInBody 1s;
 }
 html::-webkit-scrollbar {
     display: none;
@@ -24,13 +24,29 @@ body{
     background-size: cover;
 }
 
-@keyframes slideDown {
-	0% {margin-top: -100%; opacity: 0;}
-	100% {margin-top: 0; opacity: 1;}
-}
-@keyframes fadeIn {
+/* KEYFRAMES */
+
+@keyframes fadeInBody {
   0%	{opacity: 0;}
   100%	{opacity: 1;}
+}
+@keyframes logoIconAnim{
+	0%	{transform: scale(0);}
+	100%{transform: scale(1);}
+}
+@keyframes slideshowAnim {
+	0% {opacity: 0; width: 0%;}
+	100% {opacity: 1; width: 40%;}
+}
+@keyframes slideshowScroll {
+	12.5% 	{top: 0;}
+	25% 	{top: -100%;}
+	37.5% 	{top: -100%;}
+	50% 	{top: -200%;}
+	67.5% 	{top: -200%;}
+	75% 	{top: -300%;}
+	87.5%	{top: -300%;}
+	100%	{top: -400%;}
 }
 
 /* TOP SECTION */
@@ -48,7 +64,9 @@ section .header-wrapper{
 nav .logo{
 	width: 100px;
 	margin: 0;
+	border-radius: 50%;
 	transition: 750ms linear;
+	animation: logoIconAnim 2s ease;
 }
 nav .logo:hover{
 	transform: scale(1.2);
@@ -57,6 +75,7 @@ nav .logo:hover{
 a .navbar-icon{
 	height: 100%;
 	width: 100%;
+	border-radius: 50%;
 }
 
 .slideshow{
@@ -66,27 +85,19 @@ a .navbar-icon{
 	width: 40%;
 	height: 50%;
 	overflow: hidden;
+	animation: slideshowAnim 2s ease;
 }
 .img-container{
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	animation: slideUp 15s infinite;
+	animation: slideshowScroll 20s ease infinite;
 }
 .slide-img{
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
 	float: left;
-}
-
-@keyframes slideUp {
-	20% {top: 0;}
-	40% {top: -100%;}
-	50% {top: -100%;}
-	70% {top: -200%;}
-	80% {top: -200%;}
-	100%{top: 0;}
 }
 
 /* CONTENT */
@@ -99,7 +110,7 @@ a .navbar-icon{
     min-width: 100%;
 }
 .container-color{
-    background-color:#a78873;
+    background-color: #a78873;
 }
 .container-fluid { 
     padding: 0;

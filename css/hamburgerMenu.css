@@ -5,14 +5,14 @@
 .fullnav {
 	font-family: 'Lato',sans-serif;
 	position: fixed;
-	background: #000;
+	background: linear-gradient(to bottom left, #996633 0%, #a78873 100%);
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 0%;
 	opacity: 0;
 	visibility: hidden;
-	transition: opacity .35s, visibility .35s, height .35s;
+	transition: opacity 1s, visibility 1s, height 1s;
 	overflow: hidden;
 }
 .fullnav.open {
@@ -23,16 +23,16 @@
 }
 .fullnav.open li {
 	animation: fadeInRight .5s ease forwards;
-	animation-delay: .35s;
+	animation-delay: .85s;
 }
 .fullnav.open li:nth-of-type(2) {
-	animation-delay: .4s;
+	animation-delay: .9s;
 }
 .fullnav.open li:nth-of-type(3) {
-	animation-delay: .45s;
+	animation-delay: 1.95s;
 }
 .fullnav.open li:nth-of-type(4) {
-	animation-delay: .50s;
+	animation-delay: 1s;
 }
 .fullnav nav {
 	position: relative;
@@ -111,6 +111,7 @@
 	font-family: 'Lato',sans-serif;
 	font-weight: bolder;
 	font-size: 1.2em;
+	animation: hamburgerMenuTextAnim 1s ease;
 }
 .fullnavBtn .hamburger {
 	background: #000;
@@ -120,15 +121,16 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	-webkit-transition: all .35s ease;
-	transition: all .35s ease;
 	cursor: pointer;
+	animation: hamburgerMenuAnim 0.5s ease;
 }
 .fullnavBtn .hamburger:nth-of-type(2) {
 	top: 11px;
+	animation: hamburgerMenuAnim 1.25s ease;
 }
 .fullnavBtn .hamburger:nth-of-type(3) {
 	top: 22px;
+	animation: hamburgerMenuAnim 2s ease;
 }
 
 .fullnavBtn.active{
@@ -151,4 +153,14 @@
 .fullnavBtn.active .bottom {
 	transform: translateY(11px) translateX(0) rotate(45deg);
 	background: #FFF;
+}
+
+@keyframes hamburgerMenuAnim {
+	0% {opacity: 0; width: 0%;}
+	100% {opacity: 1; width: 35px;}
+}
+@keyframes hamburgerMenuTextAnim {
+	0% 	{opacity: 0; left: 0;}
+	30%	{opacity: 0;}
+	100%{opacity: 1; left: -210%;}
 }
