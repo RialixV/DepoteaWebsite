@@ -122,14 +122,17 @@
 	top: 0;
 	left: 0;
 	cursor: pointer;
-	animation: hamburgerMenuAnim 0.5s ease;
+	transition: .35s ease;
+	animation: hamburgerMenuAnim 1s ease;
 }
 .fullnavBtn .hamburger:nth-of-type(2) {
 	top: 11px;
-	animation: hamburgerMenuAnim 1.25s ease;
+	transition: .35s ease;
+	animation: hamburgerMenuAnim 1.5s ease;
 }
 .fullnavBtn .hamburger:nth-of-type(3) {
 	top: 22px;
+	transition: .35s ease;
 	animation: hamburgerMenuAnim 2s ease;
 }
 
@@ -137,21 +140,24 @@
 	position: fixed;
 	top: 8%;
 	right: 2%;
-	transition: 0ms linear;
+	transition: 0s;
 }
 .fullnavBtn.active .text{
 	color: #fff;
 }
 .fullnavBtn.active .top {
 	opacity: 0;
+	transition: .35s ease;
 	background: #FFF;
 }
 .fullnavBtn.active .middle {
 	transform: translateY(-11px) translateX(0) rotate(-45deg);
+	transition: .35s ease;
 	background: #FFF;
 }
 .fullnavBtn.active .bottom {
 	transform: translateY(11px) translateX(0) rotate(45deg);
+	transition: .35s ease;
 	background: #FFF;
 }
 
