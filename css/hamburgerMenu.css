@@ -1,0 +1,321 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900);
+
+/* HAMBURGER BUTTON */
+
+.fullnavBtn {
+	position: absolute;
+	top: 20%;
+	right: 10%;
+	height: 27px;
+	width: 35px;
+	cursor: pointer;
+	z-index: 100;
+}
+.fullnavBtn .text{
+	position: absolute;
+	right: 150%;
+	font-family: 'Lato',sans-serif;
+	font-weight: bolder;
+	font-size: 1.2em;
+	transition: 750ms ease;
+	animation: hamburgerMenuTextOnLoad 1s ease;
+}
+.fullnavBtn .hamburger {
+	background: #000;
+	border: none;
+	height: 5px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	animation: hamburgerMenuOnLoad 1s ease;
+}
+.fullnavBtn .hamburger:nth-of-type(2) {
+	top: 11px;
+	animation: hamburgerMenuOnLoad 1.5s ease;
+}
+.fullnavBtn .hamburger:nth-of-type(3) {
+	top: 22px;
+	animation: hamburgerMenuOnLoad 2s ease;
+}
+
+
+.fullnavBtn.active{
+	position: fixed;
+	top: 7%;
+	right: 15%;
+}
+.fullnavBtn.active .text{
+	color: #fff;
+}
+.fullnavBtn.active .top {
+	opacity: 0;
+	background: #FFF;
+}
+.fullnavBtn.active .middle {
+	transform: translateY(-11px) translateX(0) rotate(-45deg);
+	animation: hamburgerMenuAnimHoverDisabled;
+	background: #FFF;
+}
+.fullnavBtn.active .bottom {
+	transform: translateY(11px) translateX(0) rotate(45deg);
+	animation: hamburgerMenuAnimHoverDisabled;
+	background: #FFF;
+}
+
+/* HOVER ANIMATIONS */
+
+.fullnavBtn:hover {
+	transition: 250ms ease;
+}
+.fullnavBtn:hover > .text{
+	letter-spacing: 5px;
+	transition: 250ms ease;
+}
+.fullnavBtn:hover > .hamburger{
+	animation: hamburgerMenuAnimHover 1.5s ease infinite;
+}
+.fullnavBtn:hover > .hamburger:nth-of-type(2){
+	animation: hamburgerMenuAnimHover 1.5s ease .25s infinite;
+}
+.fullnavBtn:hover > .hamburger:nth-of-type(3){
+	animation: hamburgerMenuAnimHover 1.5s ease .5s infinite;
+}
+
+
+.fullnavBtn.active:hover > .hamburger{
+	animation: hamburgerMenuActiveAnimHover 2s linear infinite;
+}
+.fullnavBtn.active:hover > .hamburger:nth-of-type(2){
+}
+.fullnavBtn.active:hover > .hamburger:nth-of-type(3){
+	animation: hamburgerMenuActiveAnimHover2 2s linear infinite;
+}
+
+/* KEYFRAMES */
+
+@keyframes hamburgerMenuOnLoad {
+	0% 	{width: 0%;}
+	100%{width: 100%;}
+}
+@keyframes hamburgerMenuTextOnLoad {
+	0% 	{opacity: 0; left: 0;}
+	30%	{opacity: 0;}
+	100%{opacity: 1; left: -210%;}
+}
+@keyframes hamburgerMenuAnimHover {
+	0% 	{width: 100%;}
+	50%	{width: 20%;}
+	100%{width: 100%;}
+}
+@keyframes hamburgerMenuAnimDisabled {
+	0% 	{width: 100%;}
+	100%{width: 100%;}
+}
+@keyframes hamburgerMenuActiveAnimHover {
+	0% 	{width: 100%; transform: translateY(11px) translateX(0) rotate(45deg); transform-origin: center;}
+	100%{width: 100%; transform: translateY(11px) translateX(0) rotate(404deg); transform-origin: center;}
+}
+@keyframes hamburgerMenuActiveAnimHover2 {
+	0% 	{width: 100%; transform: translateY(-11px) translateX(0) rotate(-45deg); transform-origin: center;}
+	100%{width: 100%; transform: translateY(-11px) translateX(0) rotate(314deg); transform-origin: center;}
+}
+
+/* Overlay style */
+
+
+@media only screen and (max-width: 400px) {
+	.fh-icon-wrapper{
+		max-height: 26px;
+		max-width: 109px;
+		top: 7%;
+		left: 30px;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.fullnav .svg-pc{
+		display: none;
+	}
+	.fullnav .svg-mobile{
+		display: block;
+	}
+	.fh-icon-wrapper{
+		position: absolute;
+		top: 6%;
+		left: 30px;
+	}
+	.beverage-icon-wrapper{
+		top: 31%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 173px;
+		width: 300px;
+	}
+	
+	/* ANIMATION */
+	
+	.fullnav.open .beverage-icon-container{
+		animation: slideDownBeverageIcon 3s ease;
+	}
+}
+@media only screen and (min-width: 600px) {
+	.fullnav .svg-pc{
+		display: block;
+	}
+	.fullnav .svg-mobile{
+		display: none;
+	}
+	.fh-icon-wrapper{
+		position: absolute;
+		top: 6%;
+		left: 30px;
+	}
+	.beverage-icon-wrapper{
+		top: 50%;
+		left: 30%;
+		transform: translate(-50%, -50%);
+		height: 478px;
+		width: 500px;
+	}
+	
+	/* ANIMATION */
+	
+	.fullnav.open .beverage-icon-container{
+		animation: slideLeftBeverageIcon 3s ease;
+	}
+}
+
+.fullnav {
+	font-family: 'Lato',sans-serif;
+	position: fixed;
+	background: #000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 1s, visibility 1s, height 1s;
+	overflow: hidden;
+	z-index: 100;
+}
+
+
+.fullnav .svg-pc{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.fullnav .svg-mobile{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.beverage-icon-wrapper{
+	position: absolute;
+	overflow: hidden;
+}
+.beverage-icon-container{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.beverage-icon-container img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+
+.fh-icon-wrapper{
+	position: absolute;
+	height: 33px;
+	width: 144px;
+	overflow: hidden;
+	transition: 750ms ease;
+}
+.fh-icon-container{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.fh-icon-container img{
+	width: 100%;
+	height: 100%;
+	filter: invert(1);
+}
+
+.hamburger-menu-footer{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.hamburger-menu-footer span{
+	font-size: 1em;
+	color: #fff;
+	padding: 5px 10px 5px 10px;
+	float: right;
+}
+
+
+.fullnav.open {
+	opacity: 1;
+	visibility: visible;
+	height: 100%;
+	z-index:99;
+}
+.fullnav.open .svg-pc{
+	animation: svgExpandVertical 2s ease;
+}
+.fullnav.open .svg-mobile{
+	animation: svgExpandHorizontal 2s ease;
+}
+
+/* HOVER ANIMATIONS */
+
+.beverage-icon-container img:hover{
+	animation: beverageIconShake 1s ease infinite;
+}
+.fh-icon-wrapper:hover{
+	transform: scale(1.2);
+	transition: 250ms ease;
+}
+
+/* KEYFRAMES */
+
+@keyframes svgExpandVertical{
+	0%	{height: 5%;}
+	50%	{height: 5%;}
+	100%{height: 80%;}
+}
+@keyframes svgExpandHorizontal{
+	0%	{width: 5%;}
+	50%	{width: 5%;}
+	100%{width: 80%;}
+}
+@keyframes slideLeftBeverageIcon{
+	0%	{left: 100%;}
+	60%	{left: 100%;}
+	100%{left: 0%;}
+}
+@keyframes slideDownBeverageIcon{
+	0%	{top: 100%;}
+	60%	{top: 100%;}
+	100%{top: 0%;}
+}
+@keyframes beverageIconShake {
+	0%	{transform: rotate(0deg);}
+	10%	{transform: rotate(-10deg);}
+	20%	{transform: rotate(10deg);}
+	30%	{transform: rotate(-10deg);}
+	40%	{transform: rotate(10deg);}
+	50%	{transform: rotate(-10deg);}
+	60%	{transform: rotate(10deg);}
+	70%	{transform: rotate(-10deg);}
+}
