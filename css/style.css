@@ -159,6 +159,9 @@ html {
     margin-right: 0;
     margin-left: 0;
 }
+.joe:hover{
+    color: white;
+}
 
 /* PARALLAX */
 
