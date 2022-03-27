@@ -18,7 +18,7 @@
 	font-weight: bolder;
 	font-size: 1.2em;
 	transition: 750ms ease;
-	animation: hamburgerMenuTextOnLoad 1s ease;
+	animation: hamburgerIconTextOnLoad 1s ease;
 }
 .fullnavBtn .hamburger {
 	background: #000;
@@ -29,15 +29,15 @@
 	top: 0;
 	left: 0;
 	cursor: pointer;
-	animation: hamburgerMenuOnLoad 1s ease;
+	animation: hamburgerIconOnLoad 1s ease;
 }
 .fullnavBtn .hamburger:nth-of-type(2) {
 	top: 11px;
-	animation: hamburgerMenuOnLoad 1.5s ease;
+	animation: hamburgerIconOnLoad 1.5s ease;
 }
 .fullnavBtn .hamburger:nth-of-type(3) {
 	top: 22px;
-	animation: hamburgerMenuOnLoad 2s ease;
+	animation: hamburgerIconOnLoad 2s ease;
 }
 
 
@@ -55,12 +55,12 @@
 }
 .fullnavBtn.active .middle {
 	transform: translateY(-11px) translateX(0) rotate(-45deg);
-	animation: hamburgerMenuAnimHoverDisabled;
+	animation: hamburgerIconAnimHoverDisabled;
 	background: #FFF;
 }
 .fullnavBtn.active .bottom {
 	transform: translateY(11px) translateX(0) rotate(45deg);
-	animation: hamburgerMenuAnimHoverDisabled;
+	animation: hamburgerIconAnimHoverDisabled;
 	background: #FFF;
 }
 
@@ -74,50 +74,50 @@
 	transition: 250ms ease;
 }
 .fullnavBtn:hover > .hamburger{
-	animation: hamburgerMenuAnimHover 1.5s ease infinite;
+	animation: hamburgerIconAnimHover 1.5s ease infinite;
 }
 .fullnavBtn:hover > .hamburger:nth-of-type(2){
-	animation: hamburgerMenuAnimHover 1.5s ease .25s infinite;
+	animation: hamburgerIconAnimHover 1.5s ease .25s infinite;
 }
 .fullnavBtn:hover > .hamburger:nth-of-type(3){
-	animation: hamburgerMenuAnimHover 1.5s ease .5s infinite;
+	animation: hamburgerIconAnimHover 1.5s ease .5s infinite;
 }
 
 
 .fullnavBtn.active:hover > .hamburger{
-	animation: hamburgerMenuActiveAnimHover 2s linear;
+	animation: hamburgerIconActiveAnimHover 2s linear;
 }
 .fullnavBtn.active:hover > .hamburger:nth-of-type(2){
 }
 .fullnavBtn.active:hover > .hamburger:nth-of-type(3){
-	animation: hamburgerMenuActiveAnimHover2 2s linear;
+	animation: hamburgerIconActiveAnimHover2 2s linear;
 }
 
 /* KEYFRAMES */
 
-@keyframes hamburgerMenuOnLoad {
+@keyframes hamburgerIconOnLoad {
 	0% 	{width: 0%;}
 	100%{width: 100%;}
 }
-@keyframes hamburgerMenuTextOnLoad {
+@keyframes hamburgerIconTextOnLoad {
 	0% 	{opacity: 0; left: 0;}
 	30%	{opacity: 0;}
 	100%{opacity: 1; left: -210%;}
 }
-@keyframes hamburgerMenuAnimHover {
+@keyframes hamburgerIconAnimHover {
 	0% 	{width: 100%;}
 	50%	{width: 20%;}
 	100%{width: 100%;}
 }
-@keyframes hamburgerMenuAnimDisabled {
+@keyframes hamburgerIconAnimDisabled {
 	0% 	{width: 100%;}
 	100%{width: 100%;}
 }
-@keyframes hamburgerMenuActiveAnimHover {
+@keyframes hamburgerIconActiveAnimHover {
 	0% 	{width: 100%; transform: translateY(11px) translateX(0) rotate(45deg); transform-origin: center;}
 	100%{width: 100%; transform: translateY(11px) translateX(0) rotate(404deg); transform-origin: center;}
 }
-@keyframes hamburgerMenuActiveAnimHover2 {
+@keyframes hamburgerIconActiveAnimHover2 {
 	0% 	{width: 100%; transform: translateY(-11px) translateX(0) rotate(-45deg); transform-origin: center;}
 	100%{width: 100%; transform: translateY(-11px) translateX(0) rotate(314deg); transform-origin: center;}
 }
@@ -317,14 +317,14 @@
 	filter: invert(1);
 }
 
-.hamburger-menu-footer{
+.dropdown-menu-footer{
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	right: 0;
 	padding: 0;
 }
-.hamburger-menu-footer span{
+.dropdown-menu-footer span{
 	font-size: 1em;
 	font-weight: bold;
 	color: #fff;
