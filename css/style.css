@@ -158,6 +158,7 @@ html {
 	position: absolute;
 	height: 400px;
 	width: 500px;
+	border-radius: 5%;
 	overflow: hidden;
 }
 .img-container{
@@ -175,20 +176,9 @@ html {
 
 /* CONTENT */
 
-.content{
-    height: 100%;
+.content-container{
     height: 100vh;
-    width: 100%;
-    width: 100vw;
-    min-width: 100%;
-}
-.container-color{
     background-color: #a78873;
-}
-.container-fluid { 
-    padding: 0;
-    margin-right: 0;
-    margin-left: 0;
 }
 
 /* PARALLAX */

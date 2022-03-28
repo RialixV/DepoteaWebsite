@@ -1,11 +1,35 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900);
 
+/* MOBILE */
+
+@media only screen and (max-width: 600px) {
+	.fullnavBtn {
+		top: 1%;
+		right: 3%;
+	}
+	.fullnavBtn.active{
+		top: 4%;
+		right: 4%;
+	}
+}
+
+/* PC */
+
+@media only screen and (min-width: 600px) {
+	.fullnavBtn {
+		top: 20%;
+		right: 10%;
+	}
+	.fullnavBtn.active{
+		top: 8.5%;
+		right: 14%;
+	}
+}
+
 /* HAMBURGER BUTTON */
 
 .fullnavBtn {
 	position: absolute;
-	top: 20%;
-	right: 10%;
 	height: 27px;
 	width: 35px;
 	cursor: pointer;
@@ -43,8 +67,6 @@
 
 .fullnavBtn.active{
 	position: fixed;
-	top: 7%;
-	right: 15%;
 }
 .fullnavBtn.active .text{
 	color: #fff;
@@ -122,6 +144,8 @@
 	100%{width: 100%; transform: translateY(-11px) translateX(0) rotate(314deg); transform-origin: center;}
 }
 
+/*******************************************/
+
 /* MOBILE */
 
 @media only screen and (max-width: 400px) {
@@ -140,9 +164,8 @@
 		display: block;
 	}
 	.fh-icon-wrapper{
-		position: absolute;
-		top: 6%;
-		left: 30px;
+		top: 4%;
+		left: 4%;
 	}
 	.beverage-icon-wrapper{
 		top: 31%;
@@ -187,9 +210,8 @@
 		display: none;
 	}
 	.fh-icon-wrapper{
-		position: absolute;
 		top: 6%;
-		left: 30px;
+		left: 6%;
 	}
 	.beverage-icon-wrapper{
 		top: 50%;
@@ -434,14 +456,18 @@
 	margin: 20px;
 	background-color: #fff;
 	border-radius: 10px;
-	font-family: Miriam;
 	font-size: 1em;
 	text-align: center;
 }
-.address{
+.about{
+	font-family: Miriam;
+}
+.contact{
 	font-family: Verdana;
-	font-weight: bold;
-	font-size: 1em;
+}
+.shop-gallery{
+	color: #000;
+	overflow: hidden;
 }
 /* The cancel button on popup dialog */
 .popup a.closePopUp{
@@ -485,13 +511,13 @@
 /* KEYFRAMES */
 
 @keyframes svgExpandVertical{
-	0%	{height: 5%;}
-	50%	{height: 5%;}
+	0%	{height: 3%;}
+	50%	{height: 3%;}
 	100%{height: 80%;}
 }
 @keyframes svgExpandHorizontal{
-	0%	{width: 5%;}
-	50%	{width: 5%;}
+	0%	{width: 2%;}
+	50%	{width: 2%;}
 	100%{width: 80%;}
 }
 
