@@ -38,7 +38,7 @@
 .fullnavBtn .text{
 	position: absolute;
 	right: 150%;
-	font-family: 'Lato',sans-serif;
+	font: menu;
 	font-weight: bolder;
 	font-size: 1.2em;
 	transition: 750ms ease;
@@ -377,6 +377,7 @@
 	padding: 0;
 }
 .footer-link{
+	font: menu;
 	font-size: 1em;
 	font-weight: bold;
 	color: #fff;
@@ -463,9 +464,14 @@
 	font-family: Miriam;
 }
 .contact{
-	font-family: Verdana;
+	font: icon;
 }
-.shop-gallery{
+.contact img{
+	height: 30px;
+	width: auto;
+	object-fit: contain;
+}
+.shop-gallery-link{
 	color: #000;
 	overflow: hidden;
 }
