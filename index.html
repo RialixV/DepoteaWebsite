@@ -18,10 +18,14 @@
 </style>
 <body>
 	<section class="top-section">
+		<div class="wavy-animation-wrapper">
+			<div class="wavy-animation"></div>
+		</div>
 		<header class="navbar-wrapper">
 			<nav class="navbar">
-				<a class="navbar-icon-container" href="index.html">
-					<img class="navbar-icon" src="assets/img/logo/icon-mc.svg" style="max-height: 100%;"/>
+				<a class="navbar-icon-container" href="#" rel="noopener noreferrer" title="Home">
+					<div class="navbar-icon-animation"></div>
+					<img class="navbar-icon" src="assets/img/logo/icontext-mc.svg" style="max-height: 100%;"/>
 				</a>
 				<div class="fullnavBtn" id="toggle">
 					<span class="text">MENU</span>
@@ -33,7 +37,7 @@
 				<div class="fullnav" id="fullnav">
 					<div class="fh-icon-wrapper">
 						<div class="fh-icon-container">
-							<a href="https://foodhubexpress.ph/stores/depotea-camalig" target="_blank" rel="noopener noreferrer"><img src="assets/img/icon/fh-icon-mc.png"/></a>
+							<a href="https://foodhubexpress.ph/stores/depotea-camalig" target="_blank" rel="noopener noreferrer" title="FoodHub Express"><img src="assets/img/icon/fh-icon-mc.png"/></a>
 						</div>
 					</div>
 					<svg class="svg-pc" width="20" height="80vh">
@@ -44,25 +48,67 @@
 					</svg>
 					<div class="beverage-icon-wrapper">
 						<div class="beverage-icon-container">
-							<a href="menu.html" target="_blank" rel="noopener noreferrer"><img src="assets/img/dropdownmenu/beverage-icon.png"/></a>
+							<a href="menu.html#milktea" rel="noopener noreferrer" title="Beverage"><img src="assets/img/dropdownmenu/beverage-icon.png"/></a>
 						</div>
 					</div>
 					<div class="food-icon-wrapper">
 						<div class="food-icon-container">
-							<a href="#" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+							<a href="menu.html#snacks" rel="noopener noreferrer" style="text-decoration: none;" title="Food">
 								<img class="fork-icon" src="assets/img/dropdownmenu/fork-icon.png"></img>
 								<img class="spoon-icon" src="assets/img/dropdownmenu/spoon-icon.png"></img>
 							</a>
 						</div>
 					</div>
 					<footer class="dropdown-menu-footer">
-						<a href="#"><span>ABOUT</span></a>
-						<a href="#"><span>CONTACT</span></a>
+						<a href="#about" class="footer-link">ABOUT</a>
+						<a href="#contact" class="footer-link"><span>CONTACT</span></a>
 					</footer>
 				</div>
+					<!-- POP UP MODAL -->
+				<aside id="about" class="popup">
+					<div class="popUpContainer">
+						<header>
+							<a href="#" class="closePopUp">X</a>
+							<h2>ABOUT US</h2>
+						</header>
+						<article>
+							<p>
+							We started our business in 2000 with one goal in mind: providing an enjoyable dining experience to the San Francisco area. 
+							Thanks to our experience and dedication, we’ve managed to become masters of the craft. 
+							Providing dishes that are fresh, hearty and simply unforgettable.
+							</p>
+							<p>
+							Depotea has been nestled in the San Francisco area ever since 2000. 
+							This cozy establishment highlights our passion for market-fresh ingredients, honest cooking, and an enjoyable atmosphere. 
+							Our menu features a selection of dishes, all made in-house by our team of talented chefs.
+							</p>
+							<p>
+							Visit us at our location<br>
+							<i>refer to the gallery for the photos of the shop</i>
+							</p>
+							<p class="address">
+							Brgy. 7, Camalig Albay <br>
+							(infront of Mexita's Place)
+							</p>
+						</article>
+					</div>
+					<a href="#" class="closePopUpOutSide"></a>   
+				</aside>
+				<aside id="contact" class="popup">
+					<div class="popUpContainer">
+						<header>
+							<a href="#" class="closePopUp">X</a>
+							<h2>CONTACT INFO</h2>
+						</header>
+						<article>
+							Lorem Ipsum dolor
+						</article>
+					</div>
+					<a href="#" class="closePopUpOutSide"></a>   
+				</aside>
 			</nav>
 		</header>
-		<div class="slideshow">
+		<div class="slideshow-wrapper">
 			<div class="img-container">
 				<img class="slide-img" src="assets/img/slideshow/shop1.jpg"/>
 				<img class="slide-img" src="assets/img/slideshow/shop2.jpg"/>
@@ -72,18 +118,21 @@
 			</div>
 		</div>
 	</section>
+	
+	<section class="content-section">
 		<!-- CONTENT -->
-    <div class="container content container-color container-fluid">
-        
-    </div>
-	
-	<div class="parallax-container" style="background-image: url(assets/img/cover1.jpg)">
+		<div class="container content container-color container-fluid">
+			
+		</div>
 		
-    </div>
-	
-    <div class="container content container-color container-fluid">
-        
-    </div>
+		<div class="parallax-container" style="background-image: url(assets/img/cover1.jpg)">
+			
+		</div>
+		
+		<div class="container content container-color container-fluid">
+			
+		</div>
+	</section>
 	
 		<!-- FOOTER -->
 	<footer>

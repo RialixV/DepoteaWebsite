@@ -21,19 +21,23 @@ html {
 	.navbar-icon-container{
 		max-height: 75px;
 	}
-	.slideshow{
+	.slideshow-wrapper{
 		top: 22%;
 		left: 10%;
 		max-height: 200px;
 		max-width: 250px;
 		animation: slideshowMobileOnLoad 2s ease;
 	}
+	.navbar-icon-animation{
+		max-height: 75px;
+		max-width: 75px;
+	}
 }
 
 /* PC */
 
 @media only screen and (min-width: 600px) {
-	.slideshow{
+	.slideshow-wrapper{
 		top: 25%;
 		left: 15%;
 		animation: slideshowPCOnLoad 2s ease;
@@ -64,19 +68,14 @@ html {
 	75%	{height: 200px; width: 250px; filter: brightness(0%);}
 	100%{height: 200px; width: 250px;}
 }
-@keyframes borderAnim{
-	0%	{transform: rotate(0deg);}
-	100%{transform: rotate(360deg);}
+@keyframes wavyAnimOnLoad {
+	0%	{transform: scale(0);}
+	100%{transform: scale(1);}
 }
-@keyframes logoIconShake {
-	0%	{transform: rotate(0deg);}
-	10%	{transform: rotate(-20deg);}
-	20%	{transform: rotate(20deg);}
-	30%	{transform: rotate(-20deg);}
-	40%	{transform: rotate(20deg);}
-	50%	{transform: rotate(-20deg);}
-	60%	{transform: rotate(20deg);}
-	70%	{transform: rotate(-20deg);}
+@keyframes navbarIconAnim{
+	0%	{transform: scale(0);}
+	50%	{opacity: 1;}
+	100%{transform: scale(1.5); opacity: 0;}
 }
 @keyframes slideshowScroll {
 	12.5% 	{top: 0;}
@@ -88,6 +87,11 @@ html {
 	87.5%	{top: -300%;}
 	100%	{top: -400%;}
 }
+@keyframes wavyAnim {
+	0% 	{border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;} 
+	50% {border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;}
+	100%{border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;} 
+}
 
 /* TOP SECTION */
 
@@ -96,6 +100,22 @@ html {
 }
 
 
+.wavy-animation-wrapper{
+	transform-origin: 0 0;
+	animation: wavyAnimOnLoad 5s ease;
+}
+.wavy-animation {
+	display: absolute;
+	top: 50%;	
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: 1s ease;
+	background: linear-gradient(to bottom right, #FFDC96, #FFDC96, #fff);
+	animation: wavyAnim 2s ease-in-out infinite;
+	height: 100vh;
+	width: 100vw;
+	border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+}
 .navbar-wrapper{
 	position: absolute;
 	top: 5%;
@@ -103,7 +123,9 @@ html {
 	right: 5%;
 }
 .navbar-icon-container{
+	z-index: 1;
 	height: 100px;
+	background: #fff;
 	margin: 0;
 	border-radius: 50%;
 	transition: 750ms ease;
@@ -113,18 +135,27 @@ html {
 	transform: scale(1.2);
 	transition: 250ms ease;
 }
+.navbar-icon-container:hover > .navbar-icon-animation{
+	animation: navbarIconAnim 1s ease infinite;
+}
 .navbar-icon{
+	background: #fff;
 	height: 100%;
 	width: auto;
 	border-radius: 50%;
 }
-.navbar-icon:hover{
-	animation: logoIconShake 1s ease infinite;
+.navbar-icon-animation{
+	position: absolute;
+	z-index: -1;
+	background: radial-gradient(#FFDC96, #fff);
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
 }
 
 
-.slideshow{
-	position: relative;
+.slideshow-wrapper{
+	position: absolute;
 	height: 400px;
 	width: 500px;
 	overflow: hidden;
@@ -159,9 +190,6 @@ html {
     margin-right: 0;
     margin-left: 0;
 }
-.joe:hover{
-    color: white;
-}
 
 /* PARALLAX */
 
@@ -179,3 +207,4 @@ html {
 footer{
 	padding: 50px;
 }
+

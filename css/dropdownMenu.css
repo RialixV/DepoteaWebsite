@@ -148,15 +148,15 @@
 		top: 31%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		height: 220px;
-		width: 300px;
+		max-height: 220px;
+		max-width: 300px;
 	}
 	.food-icon-wrapper{
 		top: 70%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		height: 220px;
-		width: 300px;
+		max-height: 220px;
+		max-width: 300px;
 	}
 	
 	/* ANIMATION */
@@ -195,8 +195,6 @@
 		top: 50%;
 		left: 30%;
 		transform: translate(-50%, -50%);
-		height: 478px;
-		width: 500px;
 	}
 	.food-icon-wrapper{
 		top: 50%;
@@ -234,9 +232,10 @@
 	left: 0;
 	width: 100%;
 	height: 0%;
+	border-radius: 0 0 100% 100%;
 	opacity: 0;
 	visibility: hidden;
-	transition: opacity 1s, visibility 1s, height 1s;
+	transition: opacity 1s, visibility 1s, height 1s, border-radius 1s;
 	overflow: hidden;
 	z-index: 100;
 }
@@ -256,8 +255,26 @@
 }
 
 
+.fullnav.open {
+	height: 100%;
+	border-radius: 0;
+	opacity: 1;
+	visibility: visible;
+	z-index:99;
+	transition: opacity 1s, visibility 1s, height 1s, border-radius 1s;
+}
+.fullnav.open .svg-pc{
+	animation: svgExpandVertical 2s ease;
+}
+.fullnav.open .svg-mobile{
+	animation: svgExpandHorizontal 2s ease;
+}
+
+
 .beverage-icon-wrapper{
 	position: absolute;
+	height: 478px;
+	width: 500px;
 	overflow: hidden;
 }
 .beverage-icon-container{
@@ -270,10 +287,15 @@
 	height: 100%;
 	object-fit: contain;
 }
+.beverage-icon-container img:hover{
+	animation: beverageIconShake 1s ease infinite;
+}
 
 
 .food-icon-wrapper{
 	position: absolute;
+	height: 478px;
+	width: 500px;
 	overflow: hidden;
 }
 .food-icon-container{
@@ -298,6 +320,7 @@
 	transition: 1s ease;
 }
 
+/* FOODHUB ICON */
 
 .fh-icon-wrapper{
 	position: absolute;
@@ -305,6 +328,11 @@
 	width: 144px;
 	overflow: hidden;
 	transition: 750ms ease;
+}
+.fh-icon-wrapper:hover{
+	transform: scale(1.2);
+	transform-origin: 0 0;
+	transition: 250ms ease;
 }
 .fh-icon-container{
 	position: absolute;
@@ -317,43 +345,141 @@
 	filter: invert(1);
 }
 
+/* DROPDOWN MENU FOOTER */
+
 .dropdown-menu-footer{
 	position: absolute;
 	left: 0;
-	bottom: 0;
 	right: 0;
+	bottom: 0;
 	padding: 0;
 }
-.dropdown-menu-footer span{
+.footer-link{
 	font-size: 1em;
 	font-weight: bold;
 	color: #fff;
 	padding: 10px 20px 20px 10px;
 	float: right;
+	overflow: hidden;
+    text-decoration: none;
+}
+.footer-link:hover,
+.footer-link:focus,
+.footer-link:active{
+	color: #fff;
+}
+.footer-link::after{
+	content: '';
+    width: 100%;
+    height: 2px;
+	display: block;
+    background: #fff;
+	transform: scale(0);
+	transform-origin: center;
+    transition: .5s ease;
+}
+.footer-link:hover::after,
+.footer-link:focus::after,
+.footer-link:active::after{
+	transform: scale(1);
 }
 
+/* POP UP MODAL */
 
-.fullnav.open {
-	opacity: 1;
-	visibility: visible;
-	height: 100%;
-	z-index:99;
-}
-.fullnav.open .svg-pc{
-	animation: svgExpandVertical 2s ease;
-}
-.fullnav.open .svg-mobile{
-	animation: svgExpandHorizontal 2s ease;
-}
+.popup{
+	position: fixed;
+	top: -100vh;
+	left: 0;
+	z-index: 101;
+	background: rgba(0,0,0, 0.75);
+	width: 100vw;
+	height: 100vh;
+	opacity: 0;
 
-/* HOVER ANIMATIONS */
-
-.beverage-icon-container img:hover{
-	animation: beverageIconShake 1s ease infinite;
+	-webkit-transition: opacity  0.35s ease;
+	-moz-transition: opacity 0.35s ease;
+	-o-transition: opacity 0.35s ease;
+	transition: opacity 0.35s ease;
 }
-.fh-icon-wrapper:hover{
+.popup .popUpContainer{
+	width: 100%;
+	max-width: 500px;
+	position: fixed; /* To avoid scroll to target */
+	left: 50%;
+	top: -100vh;
+	-webkit-transition: top  0.35s ease;
+	-moz-transition: top 0.35s ease;
+	-o-transition: top 0.35s ease;
+	transition: top 0.35s ease;
+
+	/* Trick to properly center the element by using negative 
+	1/2 length of element as margin left and top */
+	margin-left: -250px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	border-radius: 10px;
+	z-index: 9999999; 
+}
+.popup h2{
+	font-family: Courier New;
+	font-weight: bold;
+	padding: 0.5em;
+	text-align: center;
+	color: #000;
+	margin: 0;
+}
+.popup article{
+	margin: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	font-family: Miriam;
+	font-size: 1em;
+	text-align: center;
+}
+.address{
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 1em;
+}
+/* The cancel button on popup dialog */
+.popup a.closePopUp{
+	font-family: verdana;
+	color: #000;
+	position: absolute;
+	top: 0.2em;
+	right: 0.375em;
+	margin: 0;
+	padding: 5px;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-decoration: none;
+	transition: 1s ease;
+}
+/* The cancel button on popup dialog */
+.popup a:hover{
 	transform: scale(1.2);
-	transition: 250ms ease;
+	transition: .35s ease;
+}
+/* When popup is targeted, by clicking on link with #popup in HTML */
+.popup:target{
+	opacity: 1;
+	top: 0;
+}
+.popup .closePopUpOutSide{
+	position: absolute;
+	left:0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999991; 
+}
+.popup:target .popUpContainer{
+	top: 50px;
+	-webkit-transition: top  1s ease;
+	-moz-transition: top 1s ease;
+	-o-transition: top 1s ease;
+	transition: top 1s ease;
 }
 
 /* KEYFRAMES */
@@ -401,4 +527,26 @@
 	0%	{top: -100%;}
 	60%	{top: -100%;}
 	100%{top: 0%;}
+}
+
+@media  (max-width: 600px) {
+	.popup .popUpContainer{
+		width: 90%;
+		max-width: none;
+		left: 5%;
+		margin-left: auto;
+	}
+	.popup ul{
+		padding: 0 1em 0 1em;
+	}
+	.popup:target .popUpContainer{
+		top: 25px;
+		-webkit-transition: top  0.35s ease;
+		-moz-transition: top 0.35s ease;
+		-o-transition: top 0.35s ease;
+		transition: top 0.35s ease;
+	}
+	.popup article{
+		line-height: 1em;
+	}
 }
