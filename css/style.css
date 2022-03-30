@@ -101,30 +101,29 @@ html {
 }
 .product-text-item{
 	opacity: 0;
+	overflow: hidden;
+	white-space: nowrap;
 }
 .product-text-item:nth-child(2), 
 .product-text-item:nth-child(3), 
 .product-text-item:nth-child(4), 
 .product-text-item:nth-child(5) {
 	position: absolute;
+	left: -100%;
 }
 .product-text-item:nth-child(2){
-	top: -100%;
 	left: 25%;
 	animation: productAnimSlideshow 10s ease 3s infinite;
 } 
 .product-text-item:nth-child(3){
-	top: -100%;
 	left: 22%;
 	animation: productAnimSlideshow2 10s ease 3s infinite;
 }
 .product-text-item:nth-child(4){
-	top: -100%;
 	left: 27%;
 	animation: productAnimSlideshow3 10s ease 3s infinite;
 }
 .product-text-item:nth-child(5){
-	top: -100%;
 	left: 17%;
 	animation: productAnimSlideshow4 10s ease 3s infinite;
 }
@@ -232,15 +231,19 @@ footer{
 	}
 	.product-text-item:nth-child(2){
 		left: 21%;
+		animation: productAnimSlideshowMobile 10s ease 3s infinite;
 	}
 	.product-text-item:nth-child(3){
 		left: 18%;
+		animation: productAnimSlideshowMobile2 10s ease 3s infinite;
 	}
 	.product-text-item:nth-child(4){
 		left: 25%;
+		animation: productAnimSlideshowMobile3 10s ease 3s infinite;
 	}
 	.product-text-item:nth-child(5){
 		left: 13%;
+		animation: productAnimSlideshowMobile4 10s ease 3s infinite;
 	}
 	
 	.msgr-icon-wrapper{
@@ -291,26 +294,51 @@ footer{
 }
 
 @keyframes productAnimSlideshow{
-	0%	{top: -100%; opacity: 0;}
-	5%	{top: 0%; opacity: 1;}
-	20%	{top: 0%; opacity: 1;}
-	25%	{top: 100%; opacity: 0;}
+	0%	{left: 0%; opacity: 0;}
+	5%	{left: 25%; opacity: 1;}
+	20%	{left: 25%; opacity: 1;}
+	25%	{left: 50%; opacity: 0;}
 }
 @keyframes productAnimSlideshow2{
-	25%	{top: -100%; opacity: 0;}
-	30%	{top: 0%; opacity: 1;}
-	45%	{top: 0%; opacity: 1;}
-	50%	{top: 100%; opacity: 0;}
+	25%	{left: 0%; opacity: 0;}
+	30%	{left: 22%; opacity: 1;}
+	45%	{left: 22%; opacity: 1;}
+	50%	{left: 50%; opacity: 0;}
 }
 @keyframes productAnimSlideshow3{
-	50%	{top: -100%; opacity: 0;}
-	55%	{top: 0%; opacity: 1;}
-	70%	{top: 0%; opacity: 1;}
-	75%	{top: 100%; opacity: 0;}
+	50%	{left: 0%; opacity: 0;}
+	55%	{left: 27%; opacity: 1;}
+	70%	{left: 27%; opacity: 1;}
+	75%	{left: 50%; opacity: 0;}
 }
 @keyframes productAnimSlideshow4{
-	75%	{top: -100%; opacity: 0;}
-	80%	{top: 0%; opacity: 1;}
-	95%	{top: 0%; opacity: 1;}
-	100%{top: 100%; opacity: 0;}
+	75%	{left: 0%; opacity: 0;}
+	80%	{left: 17%; opacity: 1;}
+	95%	{left: 17%; opacity: 1;}
+	100%{left: 40%; opacity: 0;}
+}
+
+@keyframes productAnimSlideshowMobile{
+	0%	{left: 0%; opacity: 0;}
+	5%	{left: 21%; opacity: 1;}
+	20%	{left: 21%; opacity: 1;}
+	25%	{left: 50%; opacity: 0;}
+}
+@keyframes productAnimSlideshowMobile2{
+	25%	{left: 0%; opacity: 0;}
+	30%	{left: 18%; opacity: 1;}
+	45%	{left: 18%; opacity: 1;}
+	50%	{left: 50%; opacity: 0;}
+}
+@keyframes productAnimSlideshowMobile3{
+	50%	{left: 0%; opacity: 0;}
+	55%	{left: 25%; opacity: 1;}
+	70%	{left: 25%; opacity: 1;}
+	75%	{left: 50%; opacity: 0;}
+}
+@keyframes productAnimSlideshowMobile4{
+	75%	{left: 0%; opacity: 0;}
+	80%	{left: 13%; opacity: 1;}
+	95%	{left: 13%; opacity: 1;}
+	100%{left: 50%; opacity: 0;}
 }
