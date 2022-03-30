@@ -10,6 +10,7 @@
 	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen">
 	<link href="css/dropdownMenu.css" type="text/css" rel="stylesheet" media="screen">
 	
+	<noscript>Sorry, your browser does not support JavaScript!</noscript>
     <script src="js/jquery-1.10.1.min.js" type="text/javascript"></script>
     <script src="js/script.js" type="text/javascript"></script>
 </head>
@@ -17,14 +18,10 @@
 	
 </style>
 <body>
-	<section class="top-section">
-		<div class="wavy-animation-wrapper">
-			<div class="wavy-animation"></div>
-		</div>
+	<section class="header-section">
 		<header class="navbar-wrapper">
 			<nav class="navbar">
-				<a class="navbar-icon-container" href="#" rel="noopener noreferrer" title="Home">
-					<div class="navbar-icon-animation"></div>
+				<a class="navbar-icon-container" href="#" title="Home">
 					<img class="navbar-icon" src="assets/img/logo/icontext-mc.svg" style="max-height: 100%;"/>
 				</a>
 				<div class="fullnavBtn" id="toggle">
@@ -33,11 +30,11 @@
 					<span class="hamburger middle"></span>
 					<span class="hamburger bottom"></span>
 				</div>
-        
+		
 				<div class="fullnav" id="fullnav">
 					<div class="fh-icon-wrapper">
 						<div class="fh-icon-container">
-							<a href="https://foodhubexpress.ph/stores/depotea-camalig" target="_blank" rel="noopener noreferrer" title="FoodHub Express"><img src="assets/img/icon/fh-icon-mc.png"/></a>
+							<a href="https://foodhubexpress.ph/stores/depotea-camalig" target="_blank" rel="noopener noreferrer" title="FoodHub Express"><img src="assets/img/icon/fh-icon.png"/></a>
 						</div>
 					</div>
 					<svg class="svg-pc" width="20" height="80vh">
@@ -83,6 +80,7 @@
 							This cozy establishment highlights our passion for market-fresh ingredients, honest cooking, and an enjoyable atmosphere. 
 							Our menu features a selection of dishes, all made in-house by our team of talented chefs.
 							</p>
+							<p style="margin: 0;"><span style="font: menu; font-weight: bold; color: gray;">©2000</span><span style="font: menu; font-weight: bold;">Depotea</span></p>
 							<p title="Goat Ham"><span style="font: menu; font-weight: bold; color: gray;">©2022</span><span style="font: menu; font-weight: bold;">JoeMamaIncorporated</span></p>
 						</article>
 					</div> 
@@ -95,52 +93,90 @@
 							<h2>CONTACT INFO</h2>
 						</header>
 						<article class="contact">
-							<p title="Phone Number"><img src="assets/img/icon/smartphone-icon.png"/>(0916) 458-3024</p>
+							<img class="qr-contact" src="assets/img/icon/qr-contact.png"/>
+							<p style="font-family: Miriam; padding-top: 5px;">
+							<i>scan to save as a contact</i>
+							</p>
+							<p title="Phone Number"><img class="contact-icon" src="assets/img/icon/smartphone-icon.png"/>(0916) 458-3024</p>
 							<p title="WhatsApp Number">
 								<a href="https://api.whatsapp.com/send?phone=639673522440" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-									<img src="assets/img/icon/wa-icon-mc.png"/>
+									<img class="contact-icon" src="assets/img/icon/wa-icon.png"/>
 								</a>
 							(+63) 967 352-2440</p>
-							<p title="Email"><img src="assets/img/icon/gmail-icon.png"/> depotea2019@gmail.com</p>
-							<p title="Address"><img src="assets/img/icon/address-icon.png"/>
+							<p title="Email"><img class="contact-icon" src="assets/img/icon/gmail-icon.png"/> depotea2019@gmail.com</p>
+							<p title="Address"><img class="contact-icon" src="assets/img/icon/address-icon.png"/>
 							Brgy. 7, Camalig Albay <br>
 							(in front of Mexita's Place)
 							</p>
 							<p style="font-family: Miriam;">
-							<a class="shop-gallery-link" href="#gallery" title="Go to Gallery"><i>click for shop photos</i></a>
+							<a class="shop-gallery-link" href="#gallery" rel="noopener noreferrer" title="Go to Gallery"><i>click for shop photos</i></a>
 							</p>
 						</article>
 					</div>
 				</aside>
 			</nav>
 		</header>
-		<div class="slideshow-wrapper">
-			<div class="img-container">
-				<img class="slide-img" src="assets/img/slideshow/shop1.jpg"/>
-				<img class="slide-img" src="assets/img/slideshow/shop2.jpg"/>
-				<img class="slide-img" src="assets/img/slideshow/shop3.jpg"/>
-				<img class="slide-img" src="assets/img/slideshow/shop4.jpg"/>
-				<img class="slide-img" src="assets/img/slideshow/shop1.jpg"/>
+	</section>
+	<section class="top-section">
+		<div class="top-wrapper container-fluid row justify-content-center">
+			<div class="slideshow-wrapper col-sm-auto">
+				<div class="slideshow-container">
+					<img class="slide-img" src="assets/img/slideshow/shop1.jpg"/>
+					<img class="slide-img" src="assets/img/slideshow/shop2.jpg"/>
+					<img class="slide-img" src="assets/img/slideshow/shop3.jpg"/>
+					<img class="slide-img" src="assets/img/slideshow/shop4.jpg"/>
+					<img class="slide-img" src="assets/img/slideshow/shop1.jpg"/>
+				</div>
+			</div>
+			<div class="col-sm-auto">
+				<div class="slogan-wrapper col-sm-auto">
+					<div class="slogan-container">
+						All you need is<br> 
+						love and milk tea
+					</div>
+				</div>
+				<div class="product-text-wrapper col-sm-auto mx-auto">
+					<div class="product-text-container">
+						<span class="product-text-item">...</span>
+						<span class="product-text-item">Milk Tea</span>
+						<span class="product-text-item">Fruit Tea</span>
+						<span class="product-text-item">Snacks</span>
+						<span class="product-text-item">Rice Meals</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="msgr-icon-wrapper">
+			<div class="msgr-icon-container">
+				<a href="https://m.me/depotea2019" target="_blank" rel="noopener noreferrer" title="Facebook Messenger"><img class="msgr-icon" src="assets/img/icon/msgr-icon.png"/></a>
+			</div>
+		</div>
+		<div class="order-link-wrapper">
+			<div class="order-link-container">
+				<a href="menu.html" rel="noopener noreferrer"><p><br>O<br>R<br>D<br>E<br>R<br><br>N<br>O<br>W</p></a>
 			</div>
 		</div>
 	</section>
 	
 	<section class="content-section">
 			<!-- CONTENT -->
-		<div class="content-container">
+		<div class="content-wrapper">
 			
 		</div>
 	</section>
 	
 		<!-- FOOTER -->
 	<footer>
-		<div style="text-align: center;">
-			<span>JOE</span>
+		<div class="container-fluid">
+			<div class="row">
+				<span class="col-sm order-sm-last">JOE1</span>
+				<span class="col-sm">JOE2</span>
+				<span class="col-sm order-sm-first">JOE3</span>
+			</div>
 		</div>
 	</footer>
 	
-	<noscript>Sorry, your browser does not support JavaScript!</noscript>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 </html>
