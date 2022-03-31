@@ -1,3 +1,5 @@
+@font-face { font-family: MoonImpact; src: url('../assets/fonts/MoonImpact.ttf'); } 
+
 /* HAMBURGER BUTTON */
 
 .fullnavBtn {
@@ -10,9 +12,9 @@
 .fullnavBtn .text{
 	position: absolute;
 	right: 150%;
-	font: menu;
-	font-weight: bolder;
+	font-family: MoonImpact;
 	font-size: 1.2em;
+	letter-spacing: 2px;
 	transition: 750ms ease;
 	animation: hamburgerIconTextOnLoad 1s ease;
 }
@@ -223,10 +225,10 @@
 	padding: 0;
 }
 .footer-link{
-	font: menu;
+	font-family: MoonImpact;
 	font-size: 1em;
-	font-weight: bold;
 	color: #fff;
+	letter-spacing: 1px;
 	padding: 10px 20px 20px 10px;
 	float: right;
 	overflow: hidden;
@@ -316,7 +318,9 @@
 	width: 100px;
 	transition: 1s ease;
 }
-.qr-contact:hover{
+.qr-contact:hover,
+.qr-contact:focus,
+.qr-contact:active{
 	transform: scale(3);
 	transform-origin: 50% 0%;
 	transition: 1s ease;
@@ -502,7 +506,7 @@
 @keyframes hamburgerIconTextOnLoad {
 	0% 	{opacity: 0; left: 0;}
 	30%	{opacity: 0;}
-	100%{opacity: 1; left: -210%;}
+	100%{opacity: 1; left: -230%;}
 }
 @keyframes hamburgerIconAnimHover {
 	0% 	{width: 100%;}
