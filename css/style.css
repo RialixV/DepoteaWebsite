@@ -1,6 +1,7 @@
 @font-face { font-family: Charlotte; src: url('../assets/fonts/charlotte.otf'); }
 @font-face { font-family: Nevada; src: url('../assets/fonts/SANevada.otf'); } 
 @font-face { font-family: MoonImpact; src: url('../assets/fonts/MoonImpact.ttf'); } 
+@font-face { font-family: Quicksand; src: url('../assets/fonts/Quicksand_Bold.otf'); } 
 
 body, html{
 	animation: bodyOnLoad 0.5s ease;
@@ -94,7 +95,8 @@ html {
 }
 .product-text-container{
 	position: relative;
-	font-family: Nevada;
+	font-family: Quicksand;
+	font-weight: bolder;
 	font-size: 2em;
 	color: #000;
 	text-align: center;
@@ -134,6 +136,7 @@ html {
 	bottom: 15%;
 	height: 50px;
 	width: 50px;
+	animation: logoOnLoad 2s ease;
 }
 .msgr-icon-container{
 	transition: 1s ease;
