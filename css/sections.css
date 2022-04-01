@@ -63,7 +63,7 @@
 	color: #000;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	text-shadow: 2px 3px #969696;
+	text-shadow: 2px 3px #afafaf;
 	text-align: center;
 }
 .product-text-item{
@@ -192,12 +192,22 @@
 		height: 40px;
 		width: 40px;
 	}
+	.msgr-icon-container:hover{
+		transform: scale(1.2);
+		transition: 0.35s ease;
+	}
 	.order-link-wrapper{
 		bottom: 1%;
 		animation: orderLinkOnLoadMobile 4s ease;
 	}
 	.order-link-container{
 		font-size: 0.9em;
+	}
+	.order-link-container:hover{
+		color: #000;
+		text-shadow: 5px 5px 1px #969696;
+		transform: scale(1.2);
+		transition: 0.35s ease;
 	}
 }
 
