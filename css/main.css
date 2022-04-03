@@ -444,6 +444,10 @@ html {
 
 /* CART MODAL */
 
+.cart-wrapper{
+	margin-bottom: 20px;
+}
+
 /* FOOTER */
 
 footer{
