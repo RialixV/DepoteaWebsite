@@ -1,0 +1,119 @@
+@import url('http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900');
+
+
+/* Menu */
+
+.container-color{
+    background-color: #a78873;
+}
+.col{
+    text-align: center;
+    border: 2px;
+}
+.category{
+    font-size: 15px;
+    border: 2px;
+    background-color: aliceblue;
+    padding: 10px;
+}
+.item-category{
+    font-size: 50px;
+}
+.p-text{
+	font-family:'Lato',sans-serif;
+    font-size: 20px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.p2-text{
+	font-family:'Lato',sans-serif;
+    text-align: start;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+.p3-text{
+	font-family:'Lato',sans-serif;
+    font-size: 15px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    position:relative;
+}
+.addon-text{
+	font-family:'Lato',sans-serif;
+	font-size: 15px;
+    text-align: start;
+    padding: 0;
+    margin: 0;
+    position:relative;
+}
+.item-text{
+	font-family:'Lato',sans-serif;
+    font-size: 25px;
+    text-align: center;
+    color: rgb(255, 225, 225);
+}
+.logo:hover{
+transform: scale(1.05);
+transition: 250ms linear;
+}
+.img{
+    text-align: center;
+}
+.form-size{
+    padding: 0;
+    margin: 0;
+}
+
+/*MODAL*/
+
+.checkmark {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.checkmark input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	border-radius: 50%;
+} 
+.checkmark:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+.checkmark input:checked ~ .checkmark {
+	background-color: #2196F3;
+}
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+.checkmark input:checked ~ .checkmark:after {
+	display: block;
+}
+.checkmark .checkmark:after {
+	   top: 9px;
+	  left: 9px;
+	  width: 8px;
+	  height: 8px;
+	  border-radius: 50%;
+	  background: white;
+}
