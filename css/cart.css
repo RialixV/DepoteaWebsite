@@ -1,0 +1,66 @@
+@import url('http://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900');
+
+body, html{
+	animation: bodyOnLoad 1s ease;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+/* CART */
+
+.content{
+    padding: 10px;
+    height: 100%;
+    width: 80%;
+    min-width: 80%;
+    border: 1px ;
+	border-radius: 10px;
+	margin-bottom: 40px;
+}
+.container-color{
+    background-color: #a78873;
+}
+.container-fluid { 
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+.cart-title-center{
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+    font-family: 'Lato',sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    height: 70px;
+}
+.item-card-bg{
+	background-color: #ffffff;
+	margin-left: 30px;
+	margin-right: 30px;
+	width: 80%;
+}
+.size span {
+    font-size: 11px
+}
+.color span {
+    font-size: 11px
+}
+.product-details {
+    margin-right: 70px
+}
+.pay-button {
+    color: rgb(255, 255, 255)
+}
+.text-grey {
+    color: #a39f9f
+}
+.qty i {
+    font-size: 11px
+}

@@ -1,0 +1,717 @@
+@font-face { font-family: MoonImpact; src: url('../assets/fonts/MoonImpact.ttf'); } 
+@font-face { font-family: Miriam; src: url('../assets/fonts/mriam.ttf'); } 
+
+body, html{
+	animation: bodyOnLoad 0.5s ease;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+
+.header-section{
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.navbar-wrapper{
+	padding: 20px 30px;
+}
+.navbar-icon-container{
+	height: 100px;
+	width: auto;
+	margin: 0;
+	border-radius: 50%;
+	transition: 1s ease;
+	animation: logoOnLoad 2s ease;
+}
+.navbar-icon-container:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transform: scale(1.2);
+	transition: 0.35 ease;
+}
+.navbar-icon{
+	height: 100%;
+	width: auto;
+	border-radius: 50%;
+}
+
+.cart-icon-container{
+	position: absolute;
+	height: 30px;
+	width: auto;
+	transition: 1s ease;
+	animation: logoOnLoad 2s ease;
+}
+.cart-icon-container:hover{
+	transform: scale(1.3);
+	transition: 0.35 ease;
+}
+.cart-icon{
+	height: 100%;
+	width: auto;
+}
+.cart-icon-container-open{
+	position: fixed;
+	height: 30px;
+	width: auto;
+	transition: 1s ease;
+}
+.cart-icon-container-open:hover{
+	transform: scale(1.3);
+	transition: 0.35 ease;
+}
+.cart-icon-open{
+	fill: #fff;
+	filter: invert(1);
+}
+
+/* HAMBURGER BUTTON */
+
+.fullnavBtn {
+	position: absolute;
+	height: 27px;
+	width: 35px;
+	cursor: pointer;
+	z-index: 100;
+}
+.fullnavBtn .text{
+	position: absolute;
+	right: 150%;
+	font-family: MoonImpact;
+	font-size: 1.2em;
+	letter-spacing: 2px;
+	transition: 750ms ease;
+	animation: hamburgerIconTextOnLoad 1s ease;
+}
+.fullnavBtn .hamburger {
+	background: #000;
+	border: none;
+	height: 4px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	animation: hamburgerIconOnLoad 1s ease;
+}
+.fullnavBtn .hamburger:nth-of-type(2) {
+	top: 11px;
+	animation: hamburgerIconOnLoad 1.5s ease;
+}
+.fullnavBtn .hamburger:nth-of-type(3) {
+	top: 22px;
+	animation: hamburgerIconOnLoad 2s ease;
+}
+
+
+.fullnavBtn.active{
+	position: fixed;
+}
+.fullnavBtn.active .text{
+	color: #fff;
+}
+.fullnavBtn.active .top {
+	opacity: 0;
+	background: #FFF;
+}
+.fullnavBtn.active .middle {
+	transform: translateY(-11px) translateX(0) rotate(-45deg);
+	animation: hamburgerIconAnimHoverDisabled;
+	background: #FFF;
+}
+.fullnavBtn.active .bottom {
+	transform: translateY(11px) translateX(0) rotate(45deg);
+	animation: hamburgerIconAnimHoverDisabled;
+	background: #FFF;
+}
+
+/* HOVER ANIMATIONS */
+
+.fullnavBtn:hover {
+	transition: 250ms ease;
+}
+.fullnavBtn:hover > .text{
+	letter-spacing: 5px;
+	transition: 250ms ease;
+}
+.fullnavBtn:hover > .hamburger{
+	animation: hamburgerIconAnimHover 1.5s ease infinite;
+}
+.fullnavBtn:hover > .hamburger:nth-of-type(2){
+	animation: hamburgerIconAnimHover 1.5s ease .25s infinite;
+}
+.fullnavBtn:hover > .hamburger:nth-of-type(3){
+	animation: hamburgerIconAnimHover 1.5s ease .5s infinite;
+}
+
+
+.fullnavBtn.active:hover > .hamburger{
+	animation: hamburgerIconActiveAnimHover 2s linear;
+}
+.fullnavBtn.active:hover > .hamburger:nth-of-type(2){
+}
+.fullnavBtn.active:hover > .hamburger:nth-of-type(3){
+	animation: hamburgerIconActiveAnimHover2 2s linear;
+}
+
+/*******************************************/
+
+/* NAVBAR MENU */
+
+.fullnav {
+	position: fixed;
+	background: #000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	border-radius: 0 0 100% 100%;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 1s, visibility 1s, height 1s, border-radius 1s;
+	overflow: hidden;
+	z-index: 100;
+}
+.fullnav.open {
+	height: 100%;
+	border-radius: 0;
+	opacity: 1;
+	visibility: visible;
+	z-index:99;
+	transition: opacity 1s, visibility 1s, height 1s, border-radius 1s;
+}
+
+.fullnav .svg-pc{
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.fullnav .svg-mobile{
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fullnav.open .svg-pc{
+	animation: svgExpandVertical 2s ease;
+}
+.fullnav.open .svg-mobile{
+	animation: svgExpandHorizontal 2s ease;
+}
+
+/* BEVERAGE ICON */
+
+.beverage-icon-wrapper{
+	position: fixed;
+	height: 478px;
+	width: 500px;
+	overflow: hidden;
+}
+.beverage-icon-container{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.beverage-icon-container img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	filter: invert(1);
+}
+.beverage-icon-container img:hover{
+	animation: beverageIconShake 1s ease infinite;
+}
+
+/* FOOD ICON */
+
+.food-icon-wrapper{
+	position: fixed;
+	height: 478px;
+	width: 500px;
+	overflow: hidden;
+}
+.food-icon-container{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.food-icon-container img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	filter: invert(1);
+}
+.fork-icon{
+	position: absolute;
+	left: -15%;
+	transition: 1s ease;
+}
+.spoon-icon{
+	position: absolute;
+	left: 15%;
+	transition: 1s ease;
+}
+
+/* FOODHUB ICON */
+
+.fh-icon-wrapper{
+	position: absolute;
+	height: 33px;
+	width: 144px;
+	overflow: hidden;
+	transition: 750ms ease;
+}
+.fh-icon-wrapper:hover{
+	transform: scale(1.2);
+	transform-origin: 0 0;
+	transition: 250ms ease;
+}
+.fh-icon-container{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.fh-icon-container img{
+	width: 100%;
+	height: 100%;
+	filter: invert(1);
+}
+
+/* NAVBAR MENU FOOTER */
+
+.navbar-menu-footer{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0;
+}
+.navbar-footer-link{
+	font-family: MoonImpact;
+	font-size: 1em;
+	color: #fff;
+	letter-spacing: 1px;
+	padding: 10px 20px 20px 10px;
+	float: right;
+	overflow: hidden;
+    text-decoration: none;
+}
+.navbar-footer-link:hover,
+.navbar-footer-link:focus,
+.navbar-footer-link:active{
+	color: #fff;
+}
+.navbar-footer-link::after{
+	content: '';
+    width: 100%;
+    height: 2px;
+	display: block;
+    background: #fff;
+	transform: scale(0);
+	transform-origin: center;
+    transition: .5s ease;
+}
+.navbar-footer-link:hover::after,
+.navbar-footer-link:focus::after,
+.navbar-footer-link:active::after{
+	transform: scale(1);
+}
+
+/* POP UP MODAL */
+
+.popup{
+	position: fixed;
+	top: -100vh;
+	left: 0;
+	z-index: 101;
+	background: rgba(0,0,0, 0.75);
+	width: 100vw;
+	height: 100vh;
+	opacity: 0;
+
+	-webkit-transition: opacity  0.35s ease;
+	-moz-transition: opacity 0.35s ease;
+	-o-transition: opacity 0.35s ease;
+	transition: opacity 0.35s ease;
+}
+.popup .popUpContainer{
+	width: 100%;
+	max-width: 500px;
+	position: fixed; /* To avoid scroll to target */
+	left: 50%;
+	top: -100vh;
+	-webkit-transition: top  0.35s ease;
+	-moz-transition: top 0.35s ease;
+	-o-transition: top 0.35s ease;
+	transition: top 0.35s ease;
+
+	/* Trick to properly center the element by using negative 
+	1/2 length of element as margin left and top */
+	margin-left: -250px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	border-radius: 10px;
+}
+.popup h2{
+	font-family: Courier New;
+	font-weight: bold;
+	padding: 0.5em;
+	text-align: center;
+	color: #000;
+	margin: 0;
+}
+.popup article{
+	margin: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	font-size: 1em;
+	text-align: center;
+}
+.about{
+	font-family: Miriam;
+}
+.contact{
+	font: icon;
+}
+.qr-contact{
+	height: 100px;
+	width: 100px;
+	transition: 1s ease;
+}
+.qr-contact:hover,
+.qr-contact:focus,
+.qr-contact:active{
+	transform: scale(3);
+	transform-origin: 50% 0%;
+	transition: 1s ease;
+}
+.contact-icon{
+	height: 30px;
+	width: auto;
+	object-fit: contain;
+}
+.shop-gallery-link{
+	color: #000;
+	overflow: hidden;
+}
+.popup a.closePopUp{
+	font-family: verdana;
+	color: #000;
+	position: absolute;
+	top: 0.2em;
+	right: 0.375em;
+	margin: 0;
+	padding: 5px;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-decoration: none;
+	transition: 1s ease;
+}
+.popup a:hover{
+	transform: scale(1.2);
+	transition: .35s ease;
+}
+/* When popup is targeted, by clicking on link with #popup in HTML */
+.popup:target{
+	opacity: 1;
+	top: 0;
+}
+.popup .closePopUpOutSide{
+	position: absolute;
+	left:0;
+	width: 100%;
+	height: 100%;
+}
+.popup:target .popUpContainer{
+	top: 50px;
+	-webkit-transition: top  1s ease;
+	-moz-transition: top 1s ease;
+	-o-transition: top 1s ease;
+	transition: top 1s ease;
+}
+
+/* CART MODAL */
+
+/* FOOTER */
+
+footer{
+	padding: 20px 30px;
+	text-align: center;
+	vertical-align: 100px;
+}
+footer span{
+	padding: 10px 0;
+}
+.footer-logo img{
+	height: 75px; 
+	width: auto;
+	border-radius: 50%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transition: 1s ease;
+}
+.footer-logo img:hover{
+	transform: scale(1.2);
+	transition: 0.35s ease;
+}
+.footer-link img{
+	height: 35px;
+	width: 35px;
+	margin: 5px;
+	object-fit: contain;
+	transition: 1s ease;
+}
+.footer-link img:hover{
+	transform: scale(1.1);
+	transition: 0.35s ease;
+}
+
+
+/* PC */
+
+@media only screen and (min-width: 768px) {
+	.fullnavBtn {
+		top: 20%;
+		right: 10%;
+	}
+	.fullnavBtn.active{
+		top: 6%;
+		right: 14%;
+	}
+	.cart-icon-container{
+		top: 18%;
+		right: 6%;
+	}
+	.cart-icon-container-open{
+		top: 5.5%;
+		right: 10%;
+	}
+	.fullnav .svg-pc{
+		display: block;
+	}
+	.fullnav .svg-mobile{
+		display: none;
+	}
+	.fh-icon-wrapper{
+		top: 6%;
+		left: 6%;
+	}
+	.beverage-icon-wrapper{
+		top: 50%;
+		left: 30%;
+		transform: translate(-50%, -50%);
+	}
+	.food-icon-wrapper{
+		top: 50%;
+		left: 70%;
+		transform: translate(-50%, -50%);
+		height: 478px;
+		width: 500px;
+	}
+	
+	/* ANIMATION */
+	
+	.fullnav.open .beverage-icon-container{
+		animation: slideLeftBeverageIcon 3s ease;
+	}
+	.fullnav.open .food-icon-container{
+		animation: slideRightFoodIcon 3s ease;
+	}
+	.food-icon-container a:hover > .fork-icon{
+		transform: translateY(0) translateX(100px) rotate(30deg);
+		transition: 1s ease;
+	}
+	.food-icon-container a:hover > .spoon-icon{
+		transform: translateY(0) translateX(-100px) rotate(-30deg);
+		transition: 1s ease;
+	}
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 425px) {
+	.navbar{
+		padding: 0;
+	}
+	.navbar-wrapper{
+		top: 3%;
+	}
+	.navbar-icon-container{
+		max-height: 75px;
+	}
+	.fullnavBtn {
+		top: 1%;
+		right: 3%;
+	}
+	.fullnavBtn.active{
+		top: 4%;
+		right: 4%;
+	}
+	.cart-icon-container{
+		top: 60%;
+		right: 4%;
+	}
+	.cart-icon-container-open{
+		top: 12%;
+		right: 5%;
+	}
+	.fullnav .svg-pc{
+		display: none;
+	}
+	.fullnav .svg-mobile{
+		display: block;
+	}
+	.fh-icon-wrapper{
+		top: 4%;
+		left: 4%;
+	}
+	.beverage-icon-wrapper{
+		top: 31%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-height: 220px;
+		max-width: 200px;
+	}
+	.food-icon-wrapper{
+		top: 70%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-height: 220px;
+		max-width: 300px;
+	}
+	.popup .popUpContainer{
+		width: 90%;
+		max-width: none;
+		left: 5%;
+		margin-left: auto;
+	}
+	.popup ul{
+		padding: 0 1em 0 1em;
+	}
+	.popup:target .popUpContainer{
+		top: 25px;
+		-webkit-transition: top  0.35s ease;
+		-moz-transition: top 0.35s ease;
+		-o-transition: top 0.35s ease;
+		transition: top 0.35s ease;
+	}
+	.popup article{
+		line-height: 1em;
+	}
+	
+	/* ANIMATION */
+	
+	.fullnav.open .beverage-icon-container{
+		animation: slideDownBeverageIcon 3s ease;
+	}
+	.fullnav.open .food-icon-container{
+		animation: slideUpFoodIcon 3s ease;
+	}	
+	.food-icon-container a:hover > .fork-icon{
+		transform: translateY(0) translateX(55px) rotate(30deg);
+		transition: 1s ease;
+	}
+	.food-icon-container a:hover > .spoon-icon{
+		transform: translateY(0) translateX(-55px) rotate(-30deg);
+		transition: 1s ease;
+	}
+}
+
+
+/* KEYFRAMES */
+
+@keyframes bodyOnLoad {
+  0%	{opacity: 0;}
+  100%	{opacity: 1;}
+}
+@keyframes logoOnLoad{
+	0%	{transform: scale(0);}
+	100%{transform: scale(1);}
+}
+
+/* HAMBURGER BUTTON KEYFRAMES */
+
+@keyframes hamburgerIconOnLoad {
+	0% 	{width: 0%;}
+	100%{width: 100%;}
+}
+@keyframes hamburgerIconTextOnLoad {
+	0% 	{opacity: 0; left: 0;}
+	30%	{opacity: 0;}
+	100%{opacity: 1; left: -230%;}
+}
+@keyframes hamburgerIconAnimHover {
+	0% 	{width: 100%;}
+	50%	{width: 20%;}
+	100%{width: 100%;}
+}
+@keyframes hamburgerIconAnimDisabled {
+	0% 	{width: 100%;}
+	100%{width: 100%;}
+}
+@keyframes hamburgerIconActiveAnimHover {
+	0% 	{width: 100%; transform: translateY(11px) translateX(0) rotate(45deg); transform-origin: center;}
+	100%{width: 100%; transform: translateY(11px) translateX(0) rotate(404deg); transform-origin: center;}
+}
+@keyframes hamburgerIconActiveAnimHover2 {
+	0% 	{width: 100%; transform: translateY(-11px) translateX(0) rotate(-45deg); transform-origin: center;}
+	100%{width: 100%; transform: translateY(-11px) translateX(0) rotate(314deg); transform-origin: center;}
+}
+
+/* NAVBAR MENU KEYFRAMES */
+
+@keyframes svgExpandVertical{
+	0%	{height: 3%;}
+	50%	{height: 3%;}
+	100%{height: 80%;}
+}
+@keyframes svgExpandHorizontal{
+	0%	{width: 2%;}
+	50%	{width: 2%;}
+	100%{width: 80%;}
+}
+
+
+@keyframes slideLeftBeverageIcon{
+	0%	{left: 100%;}
+	60%	{left: 100%;}
+	100%{left: 0%;}
+}
+@keyframes slideDownBeverageIcon{
+	0%	{top: 100%;}
+	60%	{top: 100%;}
+	100%{top: 0%;}
+}
+@keyframes beverageIconShake {
+	0%	{transform: rotate(0deg);}
+	10%	{transform: rotate(-10deg);}
+	20%	{transform: rotate(10deg);}
+	30%	{transform: rotate(-10deg);}
+	40%	{transform: rotate(10deg);}
+	50%	{transform: rotate(-10deg);}
+	60%	{transform: rotate(10deg);}
+	70%	{transform: rotate(-10deg);}
+}
+
+
+@keyframes slideRightFoodIcon{
+	0%	{left: -100%;}
+	60%	{left: -100%;}
+	100%{left: 0%;}
+}
+@keyframes slideUpFoodIcon{
+	0%	{top: -100%;}
+	60%	{top: -100%;}
+	100%{top: 0%;}
+}
