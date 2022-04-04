@@ -37,9 +37,9 @@ function modalChange(event) {
     console.log(shopItem)
     var titleElement = shopItem.getElementsByClassName('shop-item-title')[0].innerText
     var priceElement = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-    document.getElementsByClassName('shop-item-modal-title')[0].innerText = titleElement
     document.getElementsByClassName('shop-item-modal-price')[0].innerText = priceElement
-    var modalImg = document.getElementById('modal-img').src
+    document.getElementsByClassName('shop-item-modal-title')[0].innerText = titleElement
+
     switch (titleElement) {
         case "Mocha":
             document.getElementById('modal-img').src = "https://i.imgur.com/VHkw3UU.jpeg"
@@ -51,19 +51,59 @@ function modalChange(event) {
     console.log(titleElement)
 }
 
-function updateItemTotal(){
-    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
-    var total = 0
-    console.log(cartRows)
-    for (var i = 0; i < cartRows.length; i++) {
-        var cartRow = cartRows[i]
-        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
-        var quantityElement = cartRow.getElementsByClassName('cart-qty')[0]
-        var price = parseFloat(priceElement.innerText.replace('₱', ''))
-        var quantity = quantityElement.value
-        total = total + (price * quantity)
+function ItemSizePriceUpdate(clicked_id){
+    var ItemsizeLarge = document.getElementById('flexRadioDefault8')
+    var modalParent = ItemsizeLarge.parentElement.parentElement.parentElement.parentElement
+    var ActiveID = clicked_id
+    console.log(ActiveID)
+    switch (ActiveID){
+        case "flexRadioDefault7":
+        modalParent.getElementsByClassName('shop-item-modal-price')[0].innerText = '₱' + '70'
+        break;
+        case "flexRadioDefault8":
+        modalParent.getElementsByClassName('shop-item-modal-price')[0].innerText = '₱' + '80'
+        break;
     }
-    total = Math.round(total * 100) / 100
-    document.getElementsByClassName('cart-total-price')[0].innerText = '₱' + total
+}
+
+function addOnPriceUpdate(clicked_id){
+    var sinkersElement = document.getElementById('flexRadioDefault1')
+    var modalParent = sinkersElement.parentElement.parentElement.parentElement.parentElement
+    var ActiveId = clicked_id
+    var itemprice = modalParent.getElementsByClassName('shop-item-modal-price')[0].innerText
+    var price = parseFloat(itemprice.replace('₱', ''))
+    console.log(price)
+    switch (ActiveId){
+        case "flexRadioDefault1":
+            var totalprice = price + 20
+            modalParent.getElementsByClassName('shop-item-modal-price')[0].innerText = '₱' + totalprice
+            break;
+            case "flexRadioDefault2":
+            totalprice = price + 30
+            modalParent.getElementsByClassName('shop-item-modal-price')[0].innerText = '₱' + totalprice 
+            break;
+            case "flexRadioDefault3":
+            totalprice = price + 2
+            modalParent.getElementsByClassName('shop-item-modal-price')[0].innerText = '₱' + totalprice 
+            break;
+            case "flexRadioDefault4":
+            totalprice = price
+            modalParent.getElementsByClassName('shop-item-modal-price')[0].innerText = '₱' + totalprice 
+            break;
+            case "flexRadioDefault5":
+            totalprice = price
+            modalParent.getElementsByClassName('shop-item-modal-price')[0].innerText = '₱' + totalprice
+            break;
+            case "flexRadioDefault6":
+            totalprice = price
+            modalParent.getElementsByClassName('shop-item-modal-price')[0].innerText = '₱' + totalprice
+            break;
+    }
+
+}
+
+function resetModal(){
+    $('#exampleModal').on('hidden.bs.modal', function () {
+        $(this).find('form').trigger('reset');
+    })
 }
