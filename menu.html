@@ -18,7 +18,7 @@
 <style>
 	
 </style>
-<body>
+<body onload="resetModal()">
 	<section class="header-section">
 		<header class="navbar-wrapper">
 			<nav class="navbar">
@@ -223,87 +223,90 @@
 			<!-- Modal -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<div class="modal-header" style="background-color: rgba(170, 123, 91, 0.822); height: 30px;">
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body" style="background-image: linear-gradient(rgba(170, 123, 91, 0.822), rgb(233, 233, 233));">
-						<div class="row justify-content-around">
-							<div class="col col-sm-10 col-md-5 col-lg-5">
-								<img src="https://i.imgur.com/hsNdHVj.png" width="300px; text-align:center;" id="modal-img"></img>	
+			  <div class="modal-content">
+				<div class="modal-header" style="background-color: rgba(170, 123, 91, 0.822); height: 30px;">
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body" style="background-image: linear-gradient(rgba(170, 123, 91, 0.822), rgb(233, 233, 233));">
+					<div class="row justify-content-around">
+						  <div class="col col-sm-10 col-md-5 col-lg-5">
+							<img src="https://i.imgur.com/hsNdHVj.png" width="300px; text-align:center;" id="modal-img"></img>	
+						  </div>
+						  <div class="col col-sm-10 col-md-5 col-lg-5" style="text-align: start;">
+							<h3 class="shop-item-modal-title" style="padding:0; margin:0;">Sample Tea</h3>
+							<h4 class="shop-item-modal-price" style="padding:0; margin:0;">₱0</h4>
+							<br>
+							<p class="p2-text" style="padding:0; margin:0;">Enjoy the refreshing taste of our milktea collection at Depotea</p>
+							<hr style="padding:0; margin:0;">
+							<br>
+							<div class="col item-size-col" style="text-align: start;"><h5>Size:</h5>
+								<form>
+									<div class="form-check">
+										<input class="form-check-input item-size" type="radio" name="flexRadioDefault" id="flexRadioDefault7" onclick="ItemSizePriceUpdate(this.id)" checked>
+										<label class="form-check-label item-medium" for="flexRadioDefault7" value="70">
+										Medium - ₱70
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input item-size" type="radio" name="flexRadioDefault" id="flexRadioDefault8" onclick="ItemSizePriceUpdate(this.id)">
+										<label class="form-check-label item-large" for="flexRadioDefault8" value="80">
+										Large - ₱80
+										</label>
+									</div>
+								</form>
 							</div>
-							<div class="col col-sm-10 col-md-5 col-lg-5" style="text-align: start;">
-								<h3 class="shop-item-modal-title" style="padding:0; margin:0;">Sample Tea</h3>
-								<h4 class="shop-item-modal-price" style="padding:0; margin:0;">₱0</h4>
-								<br>
-								<p class="p2-text" style="padding:0; margin:0;">Enjoy the refreshing taste of our milktea collection at Depotea</p>
-								<hr style="padding:0; margin:0;">
-								<br>
-								<div class="col" style="text-align: start;"><h5>Size:</h5>
-									<form action="/action_page.php" class="form-size addon-text">
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault7" checked>
-											<label class="form-check-label" for="flexRadioDefault7" value="70">
-											Medium - ₱70
-											</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault8">
-											<label class="form-check-label" for="flexRadioDefault8" value="80">
-											Large - ₱80
-											</label>
-										</div>
-									</form>
-								</div>
-								<div class="col" style="text-align: start;"><h5>Sinkers/Addons:</h5>
-									<form action="/action_page.php" class="form-size addon-text">
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-											<label class="form-check-label" for="flexRadioDefault1">
-											Cream Cheese
-											</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-											<label class="form-check-label" for="flexRadioDefault2">
-											Nutella Spread
-											</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
-											<label class="form-check-label" for="flexRadioDefault3">
-											Coffee Jelly
-											</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
-											<label class="form-check-label" for="flexRadioDefault4">
-											Nata de Coco
-											</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" checked>
-											<label class="form-check-label" for="flexRadioDefault5">
-											Crushed Oreo
-											</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6" checked>
-											<label class="form-check-label" for="flexRadioDefault6">
-											Pearl
-											</label>
-										</div>  
-									</form>
-								</div>
+							<div class="col" style="text-align: start;"><h5>Sinkers/Addons:</h5>
+								<form action="/action_page.php" class="form-size addon-text">
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onclick="addOnPriceUpdate(this.id)">
+										<label class="form-check-label" for="flexRadioDefault1">
+										Cream Cheese - ₱20 
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onclick="addOnPriceUpdate(this.id)">
+										<label class="form-check-label" for="flexRadioDefault2">
+										Nutella Spread - ₱30
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" onclick="addOnPriceUpdate(this.id)">
+										<label class="form-check-label" for="flexRadioDefault3">
+										Coffee Jelly - ₱20 
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" onclick="addOnPriceUpdate(this.id)">
+										<label class="form-check-label" for="flexRadioDefault4">
+										Nata de Coco - ₱15
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" onclick="addOnPriceUpdate(this.id)">
+										<label class="form-check-label" for="flexRadioDefault5">
+										Crushed Oreo - ₱15
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6" onclick="addOnPriceUpdate(this.id)">
+										<label class="form-check-label" for="flexRadioDefault6">
+										Pearl - ₱10
+										</label>
+									</div>
+									<div>  
+								</form>
 							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-success shop-item-button">Add to Cart</button>
+						  </div>
 					</div>
 				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-success shop-item-button">Add to Cart</button>
+				</div>
+			  </div>
 			</div>
 		</div>
+		<!-- Modal -->
+
 	</section>
 	
 		<!-- FOOTER -->
