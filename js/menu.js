@@ -105,5 +105,6 @@ function addOnPriceUpdate(clicked_id){
 function resetModal(){
     $('#exampleModal').on('hidden.bs.modal', function () {
         $(this).find('form').trigger('reset');
+
     })
 }
