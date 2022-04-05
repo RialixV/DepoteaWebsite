@@ -32,7 +32,7 @@
 					<span class="hamburger middle"></span>
 					<span class="hamburger bottom"></span>
 				</div>
-				<a class="cart-icon-container" href="#cart" title="Open Cart">
+				<a class="cart-icon-container" onclick="loadCartModal()" href="#cart" title="Open Cart">
 					<img class="cart-icon" src="assets/img/icon/svg/shopping-bag.svg" style="max-height: 100%;"/>
 				</a>
 				<div class="fullnav" id="fullnav">
@@ -134,46 +134,7 @@
 							<a href="#" class="closePopUp">X</a>
 							<h2>CART</h2>
 						</header>
-						<div class="cart-wrapper container content container-color">
-							<div class="row justify-content-center">
-								<div class="d-flex justify-content-between align-items-center p-2 mt-4 px-3 rounded item-card-bg">
-									<div class="mr-1"><img class="rounded" src="https://i.imgur.com/5iPwcOe.png" width="70"></div>
-									<div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">Basic T-shirt</span>
-										<div class="d-flex flex-row product-desc">
-											<div class="size mr-1"><span class="text-grey">Size:</span><span class="font-weight-bold">&nbsp;M</span></div>
-											<div class="color"><span class="text-grey">Color:</span><span class="font-weight-bold">&nbsp;Grey</span></div>
-										</div>
-									</div>
-									<div class="d-flex flex-row align-items-center qty"><i class="fa fa-minus text-danger"></i>
-										<h5 class="text-grey mt-1 mr-1 ml-1">2</h5><i class="fa fa-plus text-success"></i>
-									</div>
-									<div>
-										<h5 class="text-grey">$20.00</h5>
-									</div>
-									<div class="d-flex align-items-center"><i class="fa fa-trash mb-1 text-danger"></i></div>
-								</div>
-								<div class="d-flex justify-content-between align-items-center p-2 mt-4 px-3 rounded item-card-bg">
-									<div class="mr-1"><img class="rounded" src="https://i.imgur.com/5iPwcOe.png" width="70"></div>
-									<div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">Basic T-shirt</span>
-										<div class="d-flex flex-row product-desc">
-											<div class="size mr-1"><span class="text-grey">Size:</span><span class="font-weight-bold">&nbsp;M</span></div>
-											<div class="color"><span class="text-grey">Color:</span><span class="font-weight-bold">&nbsp;Grey</span></div>
-										</div>
-									</div>
-									<div class="d-flex flex-row align-items-center qty"><i class="fa fa-minus text-danger"></i>
-										<h5 class="text-grey mt-1 mr-1 ml-1">2</h5><i class="fa fa-plus text-success"></i>
-									</div>
-									<div>
-										<h5 class="text-grey">$20.00</h5>
-									</div>
-									<div class="d-flex align-items-center"><i class="fa fa-trash mb-1 text-danger"></i></div>
-								</div>
-							</div>
-							<hr>
-							<div class="row">
-								<div class="d-flex flex-row align-items-end justify-content-end"><button class="btn btn-dark btn-block btn-lg ml-2 pay-button" type="button">Proceed to Pay</button></div>
-							</div>
-						</div>
+						<div id="cart-wrapper"></div>
 					</div>
 				</aside>
 			</nav>
@@ -208,7 +169,7 @@
 	<script>
 		//PAGE ONLOAD
 		const xhr = new XMLHttpRequest();
-		const mainpage = document.getElementById('index-body-container');
+		const mainpage = document.getElementById("index-body-container");
 		
 		xhr.onload = function(){
 			if (this.status === 200) {
@@ -216,7 +177,7 @@
 			}
 		};
 		
-		xhr.open('get', 'mainpage.html', true);
+		xhr.open("get", "mainpage.html", true);
 		xhr.send();
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

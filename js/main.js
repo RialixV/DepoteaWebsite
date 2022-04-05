@@ -2,9 +2,9 @@
 //HAMBURGER MENU TOGGLER
 
 $(document).ready(function () {
-	$('.navbarMenuToggle').click(function() {
-		$('.fullnavBtn').toggleClass('active');
-		$('#fullnav').toggleClass('open');
+	$(".navbarMenuToggle").click(function() {
+		$(".fullnavBtn").toggleClass("active");
+		$("#fullnav").toggleClass("open");
 	});
 });
 
@@ -46,5 +46,31 @@ function loadFood() {
 	};
 	
 	xhttp.open("GET", "menu.html", true);
+	xhttp.send();
+}
+
+function loadCart() {
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("index-body-container").innerHTML = this.responseText;
+		}
+	};
+	
+	xhttp.open("GET", "cart.html", true);
+	xhttp.send();
+}
+
+function loadCartModal() {
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("cart-wrapper").innerHTML = this.responseText;
+		}
+	};
+	
+	xhttp.open("GET", "cart.html", true);
 	xhttp.send();
 }
