@@ -18,11 +18,11 @@
 	
 </style>
 <body onload="resetModal()">
-	<section class="top-section">
+	<section class="header-section">
 		<header class="navbar-wrapper">
 			<nav class="navbar">
-				<a class="navbar-icon-container" href="index.html">
-					<img class="navbar-icon" src="assets/img/logo/icon-mc.svg" style="max-height: 100%;"/>
+				<a class="navbar-icon-container" href="index.html" title="Home">
+					<img class="navbar-icon" src="assets/img/logo/svg/icontext-mc.svg" style="max-height: 100%;"/>
 				</a>
 				<div class="fullnavBtn" id="toggle">
 					<span class="text">MENU</span>
@@ -30,11 +30,18 @@
 					<span class="hamburger middle"></span>
 					<span class="hamburger bottom"></span>
 				</div>
-        
+				<a class="cart-icon-container" href="#cart" title="Open Cart">
+					<img class="cart-icon" src="assets/img/icon/svg/shopping-bag.svg" style="max-height: 100%;"/>
+				</a>
 				<div class="fullnav" id="fullnav">
+					<a class="cart-icon-container-open" href="#cart" title="Open Cart">
+						<img class="cart-icon-open" src="assets/img/icon/svg/shopping-bag.svg" style="max-height: 100%;"/>
+					</a>
 					<div class="fh-icon-wrapper">
 						<div class="fh-icon-container">
-							<a href="https://foodhubexpress.ph/stores/depotea-camalig" target="_blank" rel="noopener noreferrer"><img src="assets/img/icon/fh-icon.png"/></a>
+							<a href="https://foodhubexpress.ph/stores/depotea-camalig" target="_blank" rel="noopener noreferrer" title="FoodHub Express">
+								<img src="assets/img/icon/svg/fh-icon.svg"/>
+							</a>
 						</div>
 					</div>
 					<svg class="svg-pc" width="20" height="80vh">
@@ -45,25 +52,135 @@
 					</svg>
 					<div class="beverage-icon-wrapper">
 						<div class="beverage-icon-container">
-							<a href="menu.html" target="_blank" rel="noopener noreferrer"><img src="assets/img/dropdownmenu/beverage-icon.png"/></a>
+							<a href="menu.html#milktea" rel="noopener noreferrer" title="Beverage">
+								<img src="assets/img/navbarmenu/svg/beverage-icon.svg"/>
+							</a>
 						</div>
 					</div>
 					<div class="food-icon-wrapper">
 						<div class="food-icon-container">
-							<a href="#" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-								<img class="fork-icon" src="assets/img/dropdownmenu/fork-icon.png"></img>
-								<img class="spoon-icon" src="assets/img/dropdownmenu/spoon-icon.png"></img>
+							<a href="menu.html#snacks" rel="noopener noreferrer" style="text-decoration: none;" title="Food">
+								<img class="fork-icon" src="assets/img/navbarmenu/svg/fork-icon.svg"></img>
+								<img class="spoon-icon" src="assets/img/navbarmenu/svg/spoon-icon.svg"></img>
 							</a>
 						</div>
 					</div>
-					<footer class="dropdown-menu-footer">
-						<a href="#"><span>ABOUT</span></a>
-						<a href="#"><span>CONTACT</span></a>
+					<footer class="navbar-menu-footer">
+						<a href="#about" class="navbar-footer-link">ABOUT</a>
+						<a href="#contact" class="navbar-footer-link">CONTACT</a>
 					</footer>
 				</div>
+					<!-- POP UP MODAL -->
+					<!-- CONTACT -->
+				<aside id="about" class="popup" >
+					<div class="closePopUpOutSide" onclick="location.href='#';"></div>
+					<div class="popUpContainer">
+						<header>
+							<a href="#" class="closePopUp">X</a>
+							<h2>ABOUT US</h2>
+						</header>
+						<article class="about">
+							<p>
+							We started our business in 2000 with one goal in mind: providing an enjoyable dining experience to the San Francisco area. 
+							Thanks to our experience and dedication, we’ve managed to become masters of the craft. 
+							Providing dishes that are fresh, hearty and simply unforgettable.
+							</p>
+							<p>
+							Depotea has been nestled in the San Francisco area ever since 2000. 
+							This cozy establishment highlights our passion for market-fresh ingredients, honest cooking, and an enjoyable atmosphere. 
+							Our menu features a selection of dishes, all made in-house by our team of talented chefs.
+							</p>
+							<p title="Goat Ham"><span style="font: menu; font-weight: bold; color: gray;">©2022</span><span style="font: menu; font-weight: bold;">JoeMamaIncorporated</span></p>
+						</article>
+					</div> 
+				</aside>
+					<!-- ABOUT -->
+				<aside id="contact" class="popup">
+					<div class="closePopUpOutSide" onclick="location.href='#';"></div>
+					<div class="popUpContainer">
+						<header>
+							<a href="#" class="closePopUp">X</a>
+							<h2>CONTACT INFO</h2>
+						</header>
+						<article class="contact">
+							<img class="qr-contact" src="assets/img/icon/qr-contact.png"/>
+							<p style="font-family: Miriam; padding-top: 5px;">
+							<i>scan to save as a contact</i>
+							</p>
+							<p title="Phone Number"><img class="contact-icon" src="assets/img/icon/svg/smartphone-icon.svg"/>(0916) 458-3024</p>
+							<p title="WhatsApp Number">
+								<a href="https://api.whatsapp.com/send?phone=639673522440" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+									<img class="contact-icon" src="assets/img/icon/svg/wa-icon.svg"/>
+								</a>
+							(+63) 967 352-2440</p>
+							<p title="Email"><img class="contact-icon" src="assets/img/icon/svg/gmail-icon.svg"/> depotea2019@gmail.com</p>
+							<p title="Address"><img class="contact-icon" src="assets/img/icon/svg/address-icon.svg"/>
+							Brgy. 7, Camalig Albay <br>
+							(in front of Mexita's Place)
+							</p>
+							<p style="font-family: Miriam;">
+							<a class="shop-gallery-link" href="#gallery" rel="noopener noreferrer" title="Go to Gallery"><i>click for shop photos</i></a>
+							</p>
+						</article>
+					</div>
+				</aside>
+					<!-- CART -->
+				<aside id="cart" class="popup">
+					<div class="closePopUpOutSide" onclick="location.href='#';"></div>
+					<div class="popUpContainer">
+						<header>
+							<a href="#" class="closePopUp">X</a>
+							<h2>CART</h2>
+						</header>
+						<div class="cart-wrapper container content container-color">
+							<div class="row justify-content-center">
+								<div class="d-flex justify-content-between align-items-center p-2 mt-4 px-3 rounded item-card-bg">
+									<div class="mr-1"><img class="rounded" src="https://i.imgur.com/5iPwcOe.png" width="70"></div>
+									<div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">Basic T-shirt</span>
+										<div class="d-flex flex-row product-desc">
+											<div class="size mr-1"><span class="text-grey">Size:</span><span class="font-weight-bold">&nbsp;M</span></div>
+											<div class="color"><span class="text-grey">Color:</span><span class="font-weight-bold">&nbsp;Grey</span></div>
+										</div>
+									</div>
+									<div class="d-flex flex-row align-items-center qty"><i class="fa fa-minus text-danger"></i>
+										<h5 class="text-grey mt-1 mr-1 ml-1">2</h5><i class="fa fa-plus text-success"></i>
+									</div>
+									<div>
+										<h5 class="text-grey">$20.00</h5>
+									</div>
+									<div class="d-flex align-items-center"><i class="fa fa-trash mb-1 text-danger"></i></div>
+								</div>
+								<div class="d-flex justify-content-between align-items-center p-2 mt-4 px-3 rounded item-card-bg">
+									<div class="mr-1"><img class="rounded" src="https://i.imgur.com/5iPwcOe.png" width="70"></div>
+									<div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">Basic T-shirt</span>
+										<div class="d-flex flex-row product-desc">
+											<div class="size mr-1"><span class="text-grey">Size:</span><span class="font-weight-bold">&nbsp;M</span></div>
+											<div class="color"><span class="text-grey">Color:</span><span class="font-weight-bold">&nbsp;Grey</span></div>
+										</div>
+									</div>
+									<div class="d-flex flex-row align-items-center qty"><i class="fa fa-minus text-danger"></i>
+										<h5 class="text-grey mt-1 mr-1 ml-1">2</h5><i class="fa fa-plus text-success"></i>
+									</div>
+									<div>
+										<h5 class="text-grey">$20.00</h5>
+									</div>
+									<div class="d-flex align-items-center"><i class="fa fa-trash mb-1 text-danger"></i></div>
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="d-flex flex-row align-items-end justify-content-end"><button class="btn btn-dark btn-block btn-lg ml-2 pay-button" type="button">Proceed to Pay</button></div>
+							</div>
+						</div>
+					</div>
+				</aside>
 			</nav>
 		</header>
 	</section>
+	
+	<section class="top-section">
+	</section>
+
 		<!-- MENU -->
 		<div class="container container-color">
 
