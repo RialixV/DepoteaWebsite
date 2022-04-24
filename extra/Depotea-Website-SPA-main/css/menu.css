@@ -1,0 +1,160 @@
+
+/* CATEGORIES */
+
+.category-label{
+	height: 100%;
+	width: 100%;
+	border: 1px solid #000;
+	
+	font-family: MoonImpact;
+	font-size: 1.7em;
+	color: #000;
+	text-shadow: 3px 4px #ccc;
+	white-space: nowrap;
+	
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	
+	cursor: pointer;
+	border-radius: 20px;
+	box-shadow: 0 3px 5px 3px #ccc;
+	transition: 0.35s ease;
+	
+}
+.category-label:hover {
+	color: #fff;
+	text-shadow: 3px 4px #444;
+	background: #000;
+}
+input[name="radio-categories"] {
+	display: none;
+}
+input[name="radio-categories"]:checked ~ .category-label {
+	box-shadow: none;
+	border-radius: 10px;
+	background: #000;
+	
+	color: #fff;
+	text-shadow: 3px 4px #444;
+}
+
+/* Menu */
+
+#menu-container img {
+	height: 200px;
+	width: auto;
+	object-fit: contain;
+	transition: 1s ease;
+}
+#menu-container p:nth-of-type(odd) {
+	font-family: Quicksand;
+	font-size: 1.2em;
+	line-height: 1em;
+	margin: 5px;
+	color: #000;
+}
+#menu-container p:nth-of-type(even) {
+	font-size: 1em;
+	margin: 5px;
+	color: #000;
+}
+.menu-subcategory-title {
+	font-family: Quicksand;
+	font-size: 3em;
+	padding-bottom: 20px;
+}
+.menu-subcategory-title div {
+	border: 5px solid #000;
+	border-radius: 20px;
+	padding: 3px 10px;
+}
+.menu-item{
+	width: 150px;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+	transition: 0.35s ease;
+}
+.menu-item:hover {
+	background: #fff;
+	z-index: 10;
+	box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 5px rgba(0, 0, 0, 0.19);
+	transform: scale(1.1);
+}
+
+/* MODAL */
+
+.modal-body{
+	overflow: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.modal-body::-webkit-scrollbar {
+	display: none;
+}
+#modal-wrapper{
+	padding-bottom: 10px;
+}
+.modal-container{
+	margin: 0;
+}
+.modal-image-container{
+	position: sticky;
+	top: 0;
+	padding: 20px 0;
+}
+.modal-image-container img{
+	height: 50vh;
+	width: auto;
+	object-fit: contain;
+}
+.modal-product-header{
+	position: sticky;
+	top: 0;
+	padding-top: 10px;
+	background: #fff;
+	z-index: 100;
+}
+#modal-quantity-wrapper{
+	margin: 0;
+}
+#modal-product-name{
+	font-family: Quicksand;
+}
+#modal-product-quantity {
+    width: 2em;
+}
+#modal-product-quantity::-webkit-outer-spin-button,
+#modal-product-quantity::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+#modal-product-quantity[type=number] {
+	-moz-appearance: textfield;
+}
+.quantity-btn:focus{
+	box-shadow: none;
+}
+.quantity-btn:hover {
+	background: #eee;
+}
+#modal-product-totalprice {
+	margin-bottom: 20px;
+}
+.modal-options {
+	cursor: default;
+}
+.modal-options input,
+.modal-options label{
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+.modal-options p {
+	margin: 0;
+}
+#milktea-sugar-slider {
+	width: 200px;
+}

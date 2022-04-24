@@ -1,0 +1,203 @@
+<div id="menu-document">
+		<!-- CATEGORY -->
+	<div class="category-wrapper row justify-content-center m-0">
+		<div class="row container-fluid justify-content-center p-3">
+			<div class="col-6 col-sm-2 text-center p-2">
+				<input name="radio-categories" id="milktea-category" type="radio" oninput="loadMilkTea()">
+				<label class="category-label" for="milktea-category">Milk Tea</label>
+			</div>
+			<div class="col-6 col-sm-2 text-center p-2">
+				<input name="radio-categories" id="fruittea-category" type="radio" oninput="loadFruitTea()">
+				<label class="category-label" for="fruittea-category">Fruit Tea</label>
+			</div>
+			<div class="col-6 col-sm-2 text-center p-2">
+				<input name="radio-categories" id="snacks-category" type="radio" oninput="loadSnacks()">
+				<label class="category-label" for="snacks-category">Snacks</label>
+			</div>
+			<div class="col-6 col-sm-2 text-center p-2">
+				<input name="radio-categories" id="ricemeals-category" type="radio" oninput="loadRiceMeals()">
+				<label class="category-label" for="ricemeals-category">Rice Meals</label>
+			</div>
+			<hr style="background: linear-gradient(to right, transparent, #000, #000, #000, transparent); margin: 10px;">
+		</div>
+	</div>
+
+		<!-- MENU -->
+	<div class="menu-wrapper row justify-content-center m-0">
+		<div id="menu-container" class="col col-sm-10">
+			<!-- MENU CONTENT -->
+		</div>
+	</div>
+
+		<!-- MENU ITEM MODAL -->
+	<div class="modal fade" id="menu-item-modal" tabindex="-1" aria-labelledby="MenuItemModal" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+			<div class="modal-content">
+				<div class="modal-header bg-dark">
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div id="modal-wrapper" class="modal-body">
+					<div class="modal-container row row-cols-auto justify-content-evenly">
+						<div class="modal-image-wrapper col">
+							<div class="modal-image-container">
+								<img id="modal-product-image"/>
+							</div>
+						</div>
+						<div class="col col-sm-6 text-start text-break">
+							<div class="modal-product-header">
+								<h2 id="modal-product-name" style="margin: 0;"></h2>
+								<span id="modal-span">description</span>
+								<h5 id="modal-quantity-wrapper">Quantity:
+									<button class="quantity-btn down btn btn-link px-2" onclick="quantityChange('quantity-')">
+										<i class="fa-solid fa-circle-minus" style="color: #000;"></i>
+									</button>
+									
+									<input id="modal-product-quantity" class="form-control-sm" type="number" value="1" min="1" max="9" disabled readonly>
+									
+									<button class="quantity-btn up btn btn-link px-2" onclick="quantityChange('quantity+')">
+										<i class="fa-solid fa-circle-plus" style="color: #000;"></i>
+									</button>
+								</h5>
+								<h4 id="modal-product-price">₱</h4>
+								<div class="modal-hr" style="z-index: 100;">
+									<hr style="background: linear-gradient(to right, #000, #000, transparent); margin: -10px 0;">
+								</div>
+							</div>
+							<div class="modal-product-options">
+									<!-- GENERAL OPTIONS -->
+								<div class="general-options">
+										<!-- SIZES -->
+									<form id="product-size-option">
+										<div class="modal-hr">
+											<hr style="background: linear-gradient(to right, #000, #000, transparent); margin: 10px 0;">
+										</div>
+										<h5>Size:</h5>
+										<div class="product-sizes modal-options">
+											<input name="product-size" id="product-size1" type="radio" oninput="productCalcTotalPrice()">
+											<label class="product-size-label" for="product-size1"></label>
+										</div>
+										<div class="product-sizes modal-options">
+											<input name="product-size" id="product-size2" type="radio" oninput="productCalcTotalPrice()">
+											<label class="product-size-label" for="product-size2"></label>
+										</div>
+										<div class="product-sizes modal-options">
+											<input name="product-size" id="product-size3" type="radio" oninput="productCalcTotalPrice()">
+											<label class="product-size-label" for="product-size3"></label>
+										</div>
+									</form>
+								</div>
+									<!-- BEVERAGE OPTIONS -->
+								<div class="beverage-options">
+										<!-- MILK TEA SUGAR LEVEL -->
+									<form id="milktea-sugar-option">
+										<div class="modal-hr">
+											<hr style="background: linear-gradient(to right, #000, #000, transparent); margin: 10px 0;">
+										</div>
+										<h5>Sugar Level:</h5>
+										<div class="milktea-sugar modal-options">
+											<input name="milktea-sugar-option-slider" id="milktea-sugar-slider" value="0" min="0" max="100" step="25" type="range" oninput="milkTeaSugarSlider()">
+											<p class="milktea-sugar-label"></p>
+										</div>
+									</form>
+										<!-- ADDONS -->
+									<form id="beverage-addons-option">
+										<div class="modal-hr">
+											<hr style="background: linear-gradient(to right, #000, #000, transparent); margin: 10px 0;">
+										</div>
+										<h5>Sinkers/Add-ons:</h5>
+										<span><i>(optional)</i></span>
+										<div class="milktea-addons modal-options">
+											<input name="beverage-addon" id="addon-pearl" type="checkbox" value="10" oninput="productCalcTotalPrice()">
+											<label class="beverage-addon-label" for="addon-pearl">₱10 - Extra Pearl</label>
+										</div>
+										<div class="fruittea-addons modal-options">
+											<input name="beverage-addon" id="addon-chiaseeds" type="checkbox" value="10" oninput="productCalcTotalPrice()">
+											<label class="beverage-addon-label" for="addon-chiaseeds">₱10 - Chia Seeds</label>
+										</div>
+										<div class="beverage-addons modal-options">
+											<input name="beverage-addon" id="addon-natadecoco" type="checkbox" value="15" oninput="productCalcTotalPrice()">
+											<label class="beverage-addon-label" for="addon-natadecoco">₱15 - Nata De Coco</label>
+										</div>
+										<div class="milktea-addons modal-options">
+											<input name="beverage-addon" id="addon-crushedoreo" type="checkbox" value="15" oninput="productCalcTotalPrice()">
+											<label class="beverage-addon-label" for="addon-crushedoreo">₱15 - Crushed Oreo</label>
+										</div>
+										<div class="milktea-addons modal-options">
+											<input name="beverage-addon" id="addon-coffeejelly" type="checkbox" value="20" oninput="productCalcTotalPrice()">
+											<label class="beverage-addon-label" for="addon-coffeejelly">₱20 - Coffee Jelly</label>
+										</div>
+										<div class="milktea-addons modal-options">
+											<input name="beverage-addon" id="addon-creamcheese" type="checkbox" value="20" oninput="productCalcTotalPrice()">
+											<label class="beverage-addon-label" for="addon-creamcheese">₱20 - Cream Cheese</label>
+										</div>
+										<div class="milktea-addons modal-options">
+											<input name="beverage-addon" id="addon-nutellaspread" type="checkbox" value="30" oninput="productCalcTotalPrice()">
+											<label class="beverage-addon-label" for="addon-nutellaspread">₱30 - Nutella Spread</label>
+										</div>
+									</form>
+								</div>
+									<!-- SNACKS OPTIONS -->
+								<div class="snacks-options">
+										<!-- FRIES FLAVORS -->
+									<form id="fries-flavors-option">
+										<div class="modal-hr">
+											<hr style="background: linear-gradient(to right, #000, #000, transparent); margin: 10px 0;">
+										</div>
+										<h5>Flavors:</h5>
+										<div class="fries-flavors modal-options">
+											<input name="fries-flavor" id="flavor-cheese" type="radio" oninput="productCalcTotalPrice()">
+											<label class="fries-flavor-label" for="flavor-cheese">Cheese</label>
+										</div>
+										<div class="fries-flavors modal-options">
+											<input name="fries-flavor" id="flavor-sourcream" type="radio" oninput="productCalcTotalPrice()">
+											<label class="fries-flavor-label" for="flavor-sourcream">Sour Cream</label>
+										</div>
+										<div class="fries-flavors modal-options">
+											<input name="fries-flavor" id="flavor-bbq" type="radio" oninput="productCalcTotalPrice()">
+											<label class="fries-flavor-label" for="flavor-bbq">Barbeque</label>
+										</div>
+									</form>
+								</div>
+									<!-- RICE MEAL OPTIONS -->
+								<div class="ricemeals-options">
+										<!-- RICE MEALS OPTIONALS -->
+									<form id="ricemeals-optionals">
+										<div class="modal-hr">
+											<hr style="background: linear-gradient(to right, #000, #000, transparent); margin: 10px 0;">
+										</div>
+										<h5>Optional:</h5>
+										<div class="ricemeals-extrarice modal-options">
+											<input name="ricemeals-option" id="ricemeals-extrarice" type="checkbox" value="25" oninput="productCalcTotalPrice()">
+											<label class="ricemeals-option-label" for="ricemeals-extrarice">₱25 - Extra Rice</label>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer bg-dark">
+					<button type="button" class="btn btn-sm btn-outline-light" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-light" onclick="addToCartClick(this)">Add to Cart</button>
+				</div>
+			</div>
+		</div>
+	</div>
+		<!-- INVALID MODAL -->
+	<div class="modal fade" id="menu-modal-invalid" tabindex="-1" aria-labelledby="menuModalInvalid" aria-hidden="true">
+		<div class="menu-modal-invalid modal-dialog modal-dialog-centered modal-sm">
+			<div class="modal-content bg-dark">
+				<div class="modal-body">
+					<div class="row align-items-center">
+						<div class="col">
+							<p class="m-0" style="color: #fff;"></p>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer border-0">
+					<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

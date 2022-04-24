@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="assets/img/logo/favicon.png" type="image/x-icon" rel="shortcut icon">
+    <title>Depotea - All You Need Is Love And Milk Tea</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href="css/checkout.css" type="text/css" rel="stylesheet" media="screen">
+	<link href="css/main.css" type="text/css" rel="stylesheet" media="screen">
+	<link href="css/cart.css" type="text/css" rel="stylesheet" media="screen">
+	<link href="css/mainpage.css" type="text/css" rel="stylesheet" media="screen">
+	<link href="css/menu.css" type="text/css" rel="stylesheet" media="screen">
+	
+	<script src="js/kit-fontawesome-ec81ce478d.js" crossorigin="anonymous"></script>
+</head>
+<style>
+	
+</style>
+<body>
+	<section class="header-section">
+		<header class="navbar-wrapper">
+			<nav class="navbar">
+				<a class="navbar-icon-container" onclick="loadMainPage()" title="Home">
+					<img class="navbar-icon" src="assets/img/logo/svg/icontext-mc.svg" style="max-height: 100%;"/>
+				</a>
+				<div class="fullnavBtn navbarMenuToggle" id="toggle">
+					<span class="text">MENU</span>
+					<span class="hamburger top"></span>
+					<span class="hamburger middle"></span>
+					<span class="hamburger bottom"></span>
+				</div>
+				<a class="cart-icon-container" onclick="loadCartModal()" data-bs-toggle="modal" data-bs-target="#cart-modal" title="Open Cart">
+					<img class="cart-icon" src="assets/img/icon/svg/shopping-bag.svg" style="max-height: 100%;"/>
+				</a>
+				<div class="fullnav" id="fullnav">
+					<a class="cart-icon-container-open" onclick="loadCartModal()" data-bs-toggle="modal" data-bs-target="#cart-modal" title="Open Cart">
+						<img class="cart-icon-open" src="assets/img/icon/svg/shopping-bag.svg" style="max-height: 100%;"/>
+					</a>
+					<div class="fh-icon-wrapper">
+						<div class="fh-icon-container">
+							<a href="https://foodhubexpress.ph/stores/depotea-camalig" target="_blank" rel="noopener noreferrer" title="FoodHub Express">
+								<img src="assets/img/icon/svg/fh-icon.svg"/>
+							</a>
+						</div>
+					</div>
+					<svg class="dropdown-divider-pc" width="20" height="80vh">
+						<rect x="0" y="0" rx="10" ry="10" width="100%" height="100%" style="fill:#fff;"/>
+					</svg>
+					<svg class="dropdown-divider-mobile" width="80vw" height="8">
+						<rect x="0" y="0" rx="4" ry="4" width="100%" height="100%" style="fill:#fff;"/>
+					</svg>
+					<div class="beverage-icon-wrapper">
+						<div class="beverage-icon-container navbarMenuClose" id="toggle2">
+							<a onclick="linktoMilkTea()" title="Beverage">
+								<img src="assets/img/navbarmenu/svg/beverage-icon.svg"/>
+							</a>
+						</div>
+					</div>
+					<div class="food-icon-wrapper">
+						<div class="food-icon-container navbarMenuClose" id="toggle3">
+							<a onclick="linktoSnacks()" style="text-decoration: none;" title="Food">
+								<img class="fork-icon" src="assets/img/navbarmenu/svg/fork-icon.svg"></img>
+								<img class="spoon-icon" src="assets/img/navbarmenu/svg/spoon-icon.svg"></img>
+							</a>
+						</div>
+					</div>
+					<footer class="navbar-menu-footer">
+						<a href="#about" class="navbar-footer-link">ABOUT</a>
+						<a href="#contact" class="navbar-footer-link">CONTACT</a>
+					</footer>
+				</div>
+					<!-- POP UP MODAL -->
+					<!-- ABOUT -->
+				<aside id="about" class="popup" >
+					<div class="closePopUpOutSide" onclick="location.href='#';"></div>
+					<div class="popUpContainer">
+						<header>
+							<a href="#" class="closePopUp">X</a>
+							<h2>ABOUT US</h2>
+						</header>
+						<article class="about">
+							<p>
+							We started our business in 2000 with one goal in mind: providing an enjoyable dining experience to the San Francisco area. 
+							Thanks to our experience and dedication, we’ve managed to become masters of the craft. 
+							Providing dishes that are fresh, hearty and simply unforgettable.
+							</p>
+							<p>
+							Depotea has been nestled in the San Francisco area ever since 2000. 
+							This cozy establishment highlights our passion for market-fresh ingredients, honest cooking, and an enjoyable atmosphere. 
+							Our menu features a selection of dishes, all made in-house by our team of talented chefs.
+							</p>
+							<p title="Goat Ham"><span style="font: menu; font-weight: bold; color: gray;">©2022</span><span style="font: menu; font-weight: bold;">JoeMamaIncorporated</span></p>
+						</article>
+					</div> 
+				</aside>
+					<!-- CONTACT -->
+				<aside id="contact" class="popup">
+					<div class="closePopUpOutSide" onclick="location.href='#';"></div>
+					<div class="popUpContainer">
+						<header>
+							<a href="#" class="closePopUp">X</a>
+							<h2>CONTACT INFO</h2>
+						</header>
+						<article class="contact">
+							<img class="qr-contact" src="assets/img/icon/qr-contact.png"/>
+							<p style="font-family: Miriam; padding-top: 5px;">
+							<i>scan to save as a contact</i>
+							</p>
+							<p title="Phone Number"><img class="contact-icon" src="assets/img/icon/svg/smartphone-icon.svg"/>(0916) 458-3024</p>
+							<p title="WhatsApp Number">
+								<a href="https://api.whatsapp.com/send?phone=639673522440" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+									<img class="contact-icon" src="assets/img/icon/svg/wa-icon.svg"/>
+								</a>
+							(+63) 967 352-2440</p>
+							<p title="Email"><img class="contact-icon" src="assets/img/icon/svg/gmail-icon.svg"/> depotea2019@gmail.com</p>
+							<p title="Address"><img class="contact-icon" src="assets/img/icon/svg/address-icon.svg"/>
+							Brgy. 7, Camalig Albay <br>
+							(in front of Mexita's Place)
+							</p>
+							<p style="font-family: Miriam;">
+							<a class="shop-gallery-link navbarMenuClose" href="#" title="Go to Gallery"><i>click for shop photos</i></a>
+							</p>
+						</article>
+					</div>
+				</aside>
+					<!-- CART -->
+				<div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="CartModal" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-dark">
+								<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body" id="cart-modal-body">
+								<!-- CART MODAL CONTENT -->
+							</div>
+							<div class="modal-footer bg-dark">
+								<button type="button" class="btn btn-sm btn-outline-light" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-light navbarMenuClose" data-bs-dismiss="modal" onclick="loadCheckout()">Checkout</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</section>
+	
+		<!-- INDEX BODY -->
+	<div id="index-body-wrapper">
+		<div id="index-body-container">
+			<!-- INDEX BODY CONTENT -->
+		</div>
+	</div>
+	
+		<!-- FOOTER -->
+	<footer>
+	<hr style="background: linear-gradient(to right, transparent, #000, #000, #000, transparent); margin: 0 0 40px;">
+		<div class="container-fluid">
+			<div class="row">
+				<span class="footer-link col-sm order-sm-last">
+					<a href="https://www.facebook.com/depotea2019" target="_blank" rel="noopener noreferrer" title="Facebook"><img src="assets/img/icon/svg/fb-icon.svg"/></a>
+					<a href="https://www.instagram.com/depotea_camalig" target="_blank" rel="noopener noreferrer" title="Instagram"><img src="assets/img/icon/svg/ig-icon.svg"/></a>
+					<a href="https://www.tiktok.com/@depotea" target="_blank" rel="noopener noreferrer" title="TikTok"><img src="assets/img/icon/svg/tt-icon.svg"/><br></a>
+					<a href="https://m.me/depotea2019" target="_blank" rel="noopener noreferrer" title="Facebook Messenger"><img src="assets/img/icon/svg/msgr-icon.svg"/></a>
+					<a href="https://api.whatsapp.com/send?phone=639673522440" target="_blank" rel="noopener noreferrer" title="WhatsApp"><img src="assets/img/icon/svg/wa-icon.svg"/></a>
+				</span>
+				<span class="footer-logo col-sm">
+					<img src="assets/img/logo/svg/icon-mc.svg" onclick="location.href='#';" title="Back To Top" />
+				</span>
+				<span class="col-sm order-sm-first d-flex align-items-center justify-content-center" title="Goat Ham">
+					<span style="font: menu; font-weight: bold; color: gray;">©2022</span><span style="font: menu; font-weight: bold;">JoeMamaIncorporated</span>
+				</span>
+			</div>
+		</div>
+	</footer>
+	
+	<noscript>Sorry, your browser does not support JavaScript!</noscript>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+	<script src="js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="js/checkout.js" type="text/javascript"></script>
+    <script src="js/menu.js" type="text/javascript"></script>
+    <script src="js/cart.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

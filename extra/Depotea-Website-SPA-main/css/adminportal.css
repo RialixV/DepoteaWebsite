@@ -1,0 +1,26 @@
+.container{
+    justify-content: center;
+    align-items: center;
+    background-image: image-url("/assets/img/harambe.webp");
+}
+
+.form-group{
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.form{
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    outline: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.row{
+    margin: auto;
+    height: 100vh;
+}

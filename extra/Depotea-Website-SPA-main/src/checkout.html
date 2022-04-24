@@ -1,0 +1,90 @@
+<div class="checkout-document">
+	<div class="checkout-wrapper mx-3">
+		<div class="checkout-container container-fluid row row-cols-1 row-cols-sm-2 justify-content-center m-0">
+			<div class="cart-wrapper col col-sm-8 order-2 order-sm-1">
+				<div class="cart-container">
+					<div class="cart-header row p-3 mb-3 bg-dark text-light">
+						<div class="col-auto d-flex align-items-center">
+							<input id="cart-select-all" type="checkbox" oninput="selectAllCartItem(this)">
+						</div>
+						<div class="col d-flex align-items-center p-0 text-nowrap">
+							<label for="cart-select-all">Select All <span class="align-top" style="font-size: 0.8em;">(<span class="cart-header-item-count align-top"></span> Items)</span></label>
+						</div>
+						<div class="col-auto align-self-end p-0">
+							<button class="btn text-light" type="button" title="Delete Selected Items" onclick="deleteSelectedCartItem()"><i class="fa-solid fa-trash-can"></i> Delete</button>
+						</div>
+					</div>
+					<div class="cart-items-container row">
+						<div class="cart-items col">
+						</div>
+					</div>
+				</div>
+			</div>
+				<!-- CHECKOUT FORM -->
+			<div class="checkout-form-wrapper col col-sm-3 mx-3 mb-3 order-1 order-sm-2">
+				<div class="checkout-form-container m-3">
+					<div class="order-summary col">
+						<h3>Summary</h3>
+						<h6>Items:<span id="checkout-form-cart-quantity" style="float: right;"></span></h6>
+						<h6>Subtotal:<span id="cart-subtotal" style="float: right;">₱420</span></h6>
+						<h6>Shipping Fee:<span id="shipping-fee" style="float: right;">₱0</span></h6>
+						<hr class="my-1">
+						<h5 class="m-0">Total Price:<span id="cart-total-price" style="float: right;">₱0</span></h5>
+					</div>
+					<hr>
+					<form action="php/sendClientInfo.php" method="post" id="checkout-form" autocomplete="off">
+						<div class="claim-option-container row text-center">
+							<h5>Claim Option</h5>
+							<div class="claim-options col-6">
+								<input name="claim-option" id="claim-delivery" type="radio" required oninput="claimOption()" oninvalid="checkoutFormInvalid(this)">
+								<label for="claim-delivery">Delivery</label>
+							</div>
+							<div class="claim-options col-6">
+								<input name="claim-option" id="claim-pick-up" type="radio" required oninput="claimOption()" oninvalid="checkoutFormInvalid(this)">
+								<label for="claim-pick-up">Pick-Up</label>
+							</div>
+						</div>
+						<hr>
+						<div class="payment-method-container row text-center">
+							<h5>Payment Method</h5>
+							<div class="payment-methods col-6">
+								<input name="payment-method" id="payment-cod" type="radio" required disabled oninvalid="checkoutFormInvalid(this)">
+								<label style="color: #bbb;" for="payment-cod">COD</label>
+							</div>
+							<div class="payment-methods col-6">
+								<input name="payment-method" id="payment-gcash" type="radio" required disabled oninvalid="checkoutFormInvalid(this)">
+								<label style="color: #bbb;" for="payment-gcash">GCash</label>
+							</div>
+						</div>
+							<!-- INVALID MODAL -->
+						<hr>
+						<div class="client-info row text-center">
+							<div class="client-info-container col">
+								<h5>Client Info</h5>
+								<div class="client-input-container form-floating">
+									<input name="client-name" id="client-name-input" class="form-control" type="text" required minlength="4" placeholder="Joe Mama" onfocus="$('#checkout-form').prop('class', 'was-validated')">
+									<label for="client-name-input">Name</label>
+								</div>
+								<div class="client-input-container form-floating">
+									<input 	name="client-contact" id="client-contactno-input" class="form-control" type="tel" required minlength="15" maxlength="15"
+											placeholder="(0912) 345-6789" pattern="[\(]\d{4}[\)][\s]\d{3}[\-]\d{4}" 
+											onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="contactNoFormat(this)">
+									<label for="client-contactno-input">Contact No.</label>
+								</div>
+								<div class="client-input-container form-floating">
+									<input name="client-email" id="client-email-input" class="form-control" type="email" autocomplete="on" placeholder="joemama69@example.com">
+									<label for="client-email-input">Email</label>
+								</div>
+								<div class="client-input-container form-floating">
+									<input name="client-address" id="client-address-input" class="form-control" type="text" required minlength="6" placeholder="123 Jeff Street, Brgy. 69">
+									<label for="client-address-input">Shipping Address</label>
+								</div>
+								<input class="btn btn-dark btn-lg fw-bold" value="Place Order" type="submit">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

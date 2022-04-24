@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: rgb(236, 236, 236);
+}
+
+.navbar{
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    background-color: rgb(84, 186, 245);
+    transition: 0.4s;
+}
+
+.nav-link{
+    font-size: 1.25em;
+    text-indent: 15px;
+}
+
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover{
+    background-color: rgb(127, 114, 241);
+}
+
+/* main-page */
+
+.my-container{
+    transition: 0.4s;
+    margin-left: 250px;
+}
+
+.col-main{
+    text-align: center;
+    height: 50vh;
+    outline: 1px solid rgb(153, 153, 153);
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* navbar toggle */
+.active-nav{
+    margin-left: -300px;
+}
+
+.active-cont{
+    margin-left: 0px;
+}
+
+#menu-btn {
+    background-color: aquamarine;
+    color: rgb(0, 0, 0);
+}
+
+#menu-btn:focus{
+    box-shadow: 0 0 0 0.25rem rgb(127, 114, 241);
+}
+
